@@ -1,0 +1,39 @@
+.page {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    background-color: #444444;
+    justify-content: center;
+
+    a {
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        color: inherit;
+        text-decoration: none;
+        padding-left: 10px;
+        padding-right: 10px;
+        transition: background-color 0.3s ease-in-out;
+
+        &:hover {
+            background-color: #666666;
+        }
+
+        &:visited {
+            color: inherit;
+        }
+    }
+}
+
+.content {
+    flex: 1;
+    background-color: #222222;
+}

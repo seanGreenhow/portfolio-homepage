@@ -1,0 +1,11 @@
+.gate {
+    position: relative;
+
+    .door {
+        background-color: #CCCCCC;
+
+        &.left {}
+
+        &.right {}
+    }
+}
