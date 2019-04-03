@@ -9,10 +9,13 @@
     "build_dev": "rm -rf ./build/* && webpack --mode development"
   },
   "devDependencies": {
+    "@types/react": "^16.4.18",
+    "@types/react-dom": "^16.0.9",
     "@babel/core": "^7.1.2",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-typescript": "^7.1.0",
+    "@types/gsap": "^1.20.2",
     "@types/node": "^10.11.3",
     "@types/react-router-dom": "^4.3.1",
     "babel-loader": "^8.0.4",
@@ -31,11 +34,13 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
-    "@types/react": "^16.4.18",
-    "@types/react-dom": "^16.0.9",
+    "gsap": "^2.1.2",
+    "imports-loader": "^0.8.0",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
-    "react-perfect-scrollbar": "^1.4.0",
-    "react-router-dom": "^5.0.0"
+    "react-icons": "^3.5.0",
+    "react-router-dom": "^5.0.0",
+    "scrollmagic": "^2.0.6",
+    "simplebar-react": "^0.1.6"
   }
 }

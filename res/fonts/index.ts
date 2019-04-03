@@ -1,0 +1,6 @@
+import './BebasNeue-Regular.eot'
+import './BebasNeue-Regular.otf'
+import './BebasNeue-Regular.ttf'
+import './BebasNeue-Regular.woff'
+import './BebasNeue-Regular.woff2'
+import './Fonts.scss'
