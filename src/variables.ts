@@ -1,8 +1,8 @@
 export default {
     bigStrokeWidth: '3',
     smallStrokeWidth: '1',
-    bigLineColor: '#ca1a1a',
-    smallLineColor: '#BF2121',
+    bigLineColor: '#660000',
+    smallLineColor: '#9E0B0B',
     dotColor: '#ca1a1a',
     squaresColor: '#9E0B0B',
     bigBarsColor: '#BF2121',

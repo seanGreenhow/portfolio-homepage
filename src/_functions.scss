@@ -1,0 +1,34 @@
+.anim-text-flow {
+    $animationSteps: 5;
+    $animationDuration: 5;
+    $animationElement: span;
+    $animationElementsCount: 40;
+    $delayBetweenLetters: 0.2;
+
+    #{$animationElement} {
+        animation-name: anim-text-flow-keys;
+        animation-duration: #{$animationDuration}s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes anim-text-flow-keys {
+        @for $i from 0 through $animationSteps {
+            $ran: random(50) + 180;
+            $ran2: random(30);
+
+            #{percentage($i * (1 / $animationSteps))} {
+                color: rgb($ran, $ran2, $ran2);
+            }
+        }
+    }
+
+    $totalDelayTime: $animationElementsCount * $delayBetweenLetters;
+
+    @for $i from 1 through $animationElementsCount {
+        #{$animationElement}:nth-of-type(#{$i}) {
+            animation-delay: #{($i * $delayBetweenLetters) - $totalDelayTime}s;
+        }
+    }
+}
