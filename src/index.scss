@@ -3,21 +3,25 @@
 
 html,
 body {
-    padding: 0;
-    margin: 0;
     color: #DDDDDD;
     width: 100%;
     height: 100%;
     font-family: 'Bebas Neue';
     //font-family: 'Source Sans Pro', sans-serif;
     font-size: 20px;
+    overflow: hidden;
 }
 
-div,
-nav,
-span {
+*,
+*:before,
+*:after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
     font: inherit;
+    vertical-align: baseline;
 }
 
 .fill {
@@ -26,15 +30,9 @@ span {
 }
 
 .page {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    flex-direction: column;
+    background-color: $main-color;
 
     .content {
         position: relative;
-        flex: 1;
-        background-color: $main-color;
     }
 }

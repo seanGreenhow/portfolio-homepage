@@ -7,10 +7,10 @@ export default class Navigation extends React.Component {
         return (
             <nav>
                 <MenuLink to="/" exact>
-                    <MdHome size={18} /> <span>Home</span>
+                    <MdHome size={24} /> <span>Home</span>
                 </MenuLink>
                 <MenuLink to="/projects">
-                    <MdWork size={18} /> <span>Projects / Work</span>
+                    <MdWork size={24} /> <span>Projects / Work</span>
                 </MenuLink>
             </nav>
         )

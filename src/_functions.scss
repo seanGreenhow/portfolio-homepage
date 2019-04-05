@@ -16,10 +16,10 @@
     @keyframes anim-text-flow-keys {
         @for $i from 0 through $animationSteps {
             $ran: random(50) + 180;
-            $ran2: random(30);
+            $ran2: random(50) + 205;
 
             #{percentage($i * (1 / $animationSteps))} {
-                color: rgb($ran, $ran2, $ran2);
+                color: rgb(255, $ran2, $ran2);
             }
         }
     }

@@ -4,8 +4,9 @@ import Content from "../../components/Content";
 import { Link } from "react-router-dom";
 import { MdFace } from "react-icons/md";
 import { mapCharsIntoSpans } from "../../functions";
-
-
+import { Translate } from "react-localize-redux";
+import * as ScrollMagic from 'scrollmagic'
+import { TweenMax } from 'gsap'
 
 export default class Home extends React.Component {
     render() {
@@ -13,10 +14,14 @@ export default class Home extends React.Component {
             <Content>
                 <Intro height="calc(100% - 150px)">
                     <h1>
-                        <span className="anim-text-flow">
-                            {mapCharsIntoSpans("Sean Greenhow")} <br />
-                            {mapCharsIntoSpans("Full Stack Developer.")}
-                        </span>
+                        <Translate>
+                            {({ translate }) => (
+                                <span className="anim-text-flow">
+                                    {mapCharsIntoSpans("Sean Greenhow")} <br />
+                                    {mapCharsIntoSpans(`${translate("jobtitle")}`)}
+                                </span>
+                            )}
+                        </Translate>
                     </h1>
                 </Intro>
                 <div className="spacer" />
@@ -38,5 +43,12 @@ export default class Home extends React.Component {
                 </Link>
             </Content >
         )
+    }
+
+    componentDidMount() {
+        var controller = new ScrollMagic.Controller({ container: '.simplebar-content' });
+        var scene = new ScrollMagic.Scene({ duration: '100%', offset: 1 })
+            .addTo(controller)
+            .setTween(TweenMax.to(".background", 0.5, { opacity: 0.3 }))
     }
 }

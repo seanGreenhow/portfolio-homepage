@@ -19,6 +19,6 @@ export default class Content extends React.Component {
         var controller = new ScrollMagic.Controller({ container: '.simplebar-content' });
         var scene = new ScrollMagic.Scene({ duration: '100%', offset: 1 })
             .addTo(controller)
-            .setTween(TweenMax.to(".background", 0.5, { opacity: 0.1 }))
+            .setTween(TweenMax.to(".background", 0.5, { opacity: 0.3 }))
     }
 }
