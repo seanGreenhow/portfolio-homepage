@@ -1,50 +1,91 @@
 import * as React from "react"
 import variables from "../../variables"
 import { SVGPath } from "./SVGPath";
+import AnimatedWire from "./Wire";
 
 type SafeAreaCoordinates = { x1: number, x2: number, y1: number, y2: number }
 
-export default class CircuitBoard extends React.Component<{ width: number, height: number, callback: () => void }> {
+export default class CircuitBoard extends React.Component<{ width: number, height: number }> {
     private readonly saferoomHeight: number = 100
     private readonly saferoomWidth: number = 300
 
     render() {
         const width = this.props.width
         const height = this.props.height
-        const safeArea: SafeAreaCoordinates = {
-            x1: width / 2 - this.saferoomWidth / 2,
-            x2: width / 2 + this.saferoomWidth / 2,
-            y1: height / 2 - this.saferoomHeight / 2,
-            y2: height / 2 + this.saferoomHeight / 2
-        }
-
 
         return (
             <svg id="circuit-board" xmlns="http://www.w3.org/2000/svg" width={'100%'} height={'100%'}>
-                <path vectorEffect="non-scaling-vector" fill={variables.squaresColor} d="M901.3 180.8H888v-13h13.2v13m19.3 0h-13.1v-13h13.1v13m19.3 0h-13.1v-13h13.1v13m19.4 0H946v-13h13.2v13m19.3 0h-13.1v-13h13.1v13M52 90.6H38.8V77.4H52v13.2m19.3 0H58.2V77.4h13v13.2m19.4 0H77.5V77.4h13.1v13.2m19.4 0H96.8V77.4H110v13.2m19.3 0h-13.1V77.4h13v13.2m216-54.4h-13V23h13v13m19.4 0h-13.1v-13h13.1v13m19.3 0h-13v-13h13v13m19.4 0H390v-13h13.2v13m19.3 0h-13.1v-13h13.1v13M662 494.8h-13.2v-13.1H662v13.1m19.3 0h-13.1v-13.1h13.1v13.1m19.3 0h-13.1v-13.1h13.1v13.1m19.4 0h-13.2v-13.1H720v13.1m19.3 0h-13.2v-13.1h13.2v13.1m-550 123.6h-13.1V605h13.1v13.2m19.3 0h-13V605h13v13.2m19.4 0h-13.2V605H228v13.2m19.3 0h-13.1V605h13.1v13.2m19.3 0h-13V605h13v13.2M882 542h-13.1V529h13.1V542m19.4 0H888V529h13.2V542m19.3 0h-13.1V529h13.1V542m19.3 0h-13.1V529h13.1V542m19.4 0H946V529h13.2V542M32.6 456H19.5v-13.1h13.1v13.1m19.4 0H38.8v-13.1H52v13.1m19.3 0H58.2v-13.1h13v13.1m19.4 0H77.5v-13.1h13.1v13.1m19.4 0H96.8v-13.1H110v13.1m524.7-333.5h-13v-13.1h13v13.1m19.4 0h-13.2v-13.1h13.2v13.1m19.3 0h-13.1v-13.1h13.1v13.1m19.3 0h-13.1v-13.1h13.1v13.1m19.4 0h-13.2v-13.1h13.2v13.1" />
-                <path vectorEffect="non-scaling-vector" fill={variables.bigBarsColor} d="M690.2 235.4h-2.5v-34h2.5v34m13.4 0H701v-34h2.6v34m6.6 0h-2.5v-34h2.5v34m6.6 0h-2.5v-34h2.5v34m7 0h-2.5v-34h2.6v34m5.2 0h-2.5v-34h2.5v34m21.4 0H748v-34h2.5v34m-12.6 0h-2.5v-34h2.5v34m18.8 0h-2.5v-34h2.5v34M441.8 577.5h-2.5v-33.9h2.5v33.9m13.4 0h-2.5v-33.9h2.5v33.9m6.6 0h-2.5v-33.9h2.5v33.9m6.6 0h-2.5v-33.9h2.5v33.9m7 0H473v-33.9h2.5v33.9m5.3 0h-2.6v-33.9h2.6v33.9m21.3 0h-2.5v-33.9h2.5v33.9m-12.5 0H487v-33.9h2.6v33.9m18.7 0h-2.5v-33.9h2.5v33.9m246-147.6h-2.6v-34h2.5v34m13.3 0H765v-34h2.5v34m6.7 0h-2.6v-34h2.6v34m6.6 0h-2.5v-34h2.5v34m7 0h-2.5v-34h2.6v34m5.2 0h-2.5v-34h2.5v34m21.4 0H812v-34h2.5v34m-12.6 0h-2.5v-34h2.5v34m18.8 0h-2.5v-34h2.5v34m-807.3 116H11V512h2.5v34m13.3 0h-2.5v-34h2.5v34m6.7 0h-2.6v-34h2.6v34m6.6 0h-2.5v-34H40v34m7 0h-2.5v-34H47v34m5.3 0h-2.5v-34h2.5v34m21.4 0h-2.5v-34h2.5v34m-12.6 0h-2.5v-34h2.5v34m18.8 0h-2.5v-34h2.5v34m590.4 89.2h-2.5v-33.9h2.5v34m13.4 0H681v-34h2.6v34m6.6 0h-2.5v-34h2.5v34m6.6 0h-2.5v-34h2.5v34m7 0h-2.5v-34h2.6v34m5.2 0h-2.5v-34h2.5v34m21.4 0h-2.5v-34h2.5v34m-12.6 0h-2.5v-34h2.5v34m18.8 0h-2.5v-34h2.5v34m171.6-226.7h-2.5v-33.9h2.5v34m13.3 0h-2.5v-34h2.5v34m6.6 0h-2.5v-34h2.5v34m6.6 0h-2.5v-34h2.5v34m7.1 0h-2.5v-34h2.5v34m5.3 0h-2.5v-34h2.5v34m21.4 0h-2.5v-34h2.5v34m-12.6 0h-2.5v-34h2.5v34m18.7 0h-2.5v-34h2.5v34M20.4 235.3h-2.6v-34h2.6v34m13.3 0h-2.5v-34h2.5v34m6.6 0h-2.5v-34h2.5v34m6.6 0h-2.5v-34H47v34m7 0h-2.4v-34H54v34m5.3 0h-2.5v-34h2.5v34m21.4 0H78v-34h2.6v34m-12.6 0h-2.5v-34H68v34m18.7 0h-2.5v-34h2.5v34m27-41.5h-2.6v-34h2.6v34m13.3 0h-2.5v-34h2.5v34m6.6 0h-2.5v-34h2.5v34m6.6 0h-2.5v-34h2.5v34m7 0H145v-34h2.5v34m5.3 0h-2.5v-34h2.5v34m21.4 0h-2.6v-34h2.6v34m-12.6 0H159v-34h2.5v34m18.7 0h-2.5v-34h2.5v34M488.1 90.7h-2.5v-34h2.5v34m13.3 0h-2.5v-34h2.5v34m6.6 0h-2.5v-34h2.5v34m6.6 0h-2.5v-34h2.5v34m7.1 0h-2.5v-34h2.5v34m5.3 0h-2.5v-34h2.5v34m21.4 0h-2.5v-34h2.5v34m-12.6 0h-2.5v-34h2.5v34m18.7 0H552v-34h2.5v34" />
-                <path vectorEffect="non-scaling-vector" fill={variables.smallBarsColor} d="M888.4 100h-3.2v9.6h3.2V100m17.3 0h-3.3v9.5h3.3V100m8.5 0H911v9.5h3.2V100m8.6 0h-3.2v9.5h3.2V100m9.1 0h-3.2v9.5h3.2V100m6.9 0h-3.3v9.5h3.3V100m27.7 0h-3.3v9.5h3.3V100m-16.3 0h-3.3v9.5h3.3V100m24.2 0h-3.2v9.5h3.2V100M473.3 2.7H470v9.5h3.3V2.7m17.2 0h-3.2v9.5h3.2V2.7m8.6 0h-3.3v9.5h3.3V2.7m8.5 0h-3.2v9.5h3.2V2.7m9.2 0h-3.3v9.5h3.3V2.7m6.8 0h-3.2v9.5h3.2V2.7m27.7 0H548v9.5h3.3V2.7m-16.3 0h-3.2v9.5h3.2V2.7m24.3 0H556v9.5h3.3V2.7m-448 292H108v9.6h3.3v-9.6m17.2 0h-3.2v9.6h3.2v-9.6m8.6 0h-3.3v9.6h3.3v-9.6m8.6 0h-3.3v9.6h3.3v-9.6m9.1 0h-3.2v9.6h3.2v-9.6m6.8 0h-3.2v9.6h3.2v-9.6m27.7 0h-3.2v9.6h3.2v-9.6m-16.3 0h-3.2v9.6h3.2v-9.6m24.3 0H194v9.6h3.3v-9.6M824 34.1h-3.3v9.6h3.3V34m17.2 0h-3.2v9.6h3.2V34m8.6 0h-3.3v9.6h3.3V34m8.6 0h-3.3v9.6h3.3V34m9 0h-3.2v9.6h3.3V34m6.8 0h-3.2v9.6h3.2V34m27.7 0H899v9.6h3.2V34m-16.3 0h-3.2v9.6h3.2V34m24.3 0h-3.3v9.6h3.3V34M336 565.6h-3.3v9.5h3.2v-9.5m17.2 0H350v9.5h3.2v-9.5m8.6 0h-3.2v9.5h3.2v-9.5m8.6 0H367v9.5h3.3v-9.5m9.1 0h-3.2v9.5h3.2v-9.5m6.9 0H383v9.5h3.3v-9.5m27.6 0h-3.2v9.5h3.2v-9.5m-16.3 0h-3.2v9.5h3.2v-9.5m24.3 0h-3.3v9.5h3.3v-9.5m82.5-334h-3.3v9.5h3.3v-9.6m17.2 0h-3.2v9.6h3.2v-9.6m8.6 0H527v9.6h3.3v-9.6m8.6 0h-3.3v9.6h3.3v-9.6m9.1 0h-3.2v9.6h3.2v-9.6m6.8 0h-3.2v9.6h3.2v-9.6m27.7 0h-3.2v9.6h3.2v-9.6m-16.3 0H563v9.6h3.2v-9.6m24.3 0h-3.3v9.6h3.3v-9.6m92 116h-3.3v9.5h3.3v-9.5m17.2 0h-3.2v9.5h3.2v-9.5m8.6 0H705v9.5h3.3v-9.5m8.6 0h-3.3v9.5h3.3v-9.5m9.1 0h-3.2v9.5h3.2v-9.5m6.8 0h-3.2v9.5h3.2v-9.5m27.7 0h-3.2v9.5h3.2v-9.5m-16.3 0H741v9.5h3.2v-9.5m24.3 0h-3.3v9.5h3.3v-9.5m89 141.2h-3.3v9.6h3.3v-9.6m17.2 0h-3.2v9.6h3.2v-9.6m8.6 0H880v9.6h3.3v-9.6m8.6 0h-3.3v9.6h3.3v-9.6m9.1 0h-3.3v9.6h3.3v-9.6m6.8 0h-3.2v9.6h3.2v-9.6m27.7 0h-3.2v9.6h3.2v-9.6m-16.3 0H916v9.6h3.2v-9.6m24.3 0h-3.3v9.6h3.3v-9.6" />
+                <defs>
+                    <filter id="chipshadow">
+                        <feDropShadow dx="0" dy="0" stdDeviation="30" floodColor="#000000" floodOpacity="1" />
+                    </filter>
+                    <filter id="electronglow">
+                        <feDropShadow dx="0" dy="0" stdDeviation="10" floodColor="#FF0000" floodOpacity="1" />
+                    </filter>
+                </defs>
 
-                <path id="wire1" stroke={variables.bigLineColor} strokeWidth={variables.bigStrokeWidth} d={new SVGPath()
+                <AnimatedWire stroke={variables.bigLineColor} width={parseInt(variables.bigStrokeWidth)} electrons={4} path={new SVGPath()
                     .moveAbsolute(0, height * 0.5)
                     .drawHorizontalRelative(250)
                     .drawLineRelative(50, -50)
                     .drawHorizontalRelative(100)
-                    .drawArcRelative(20, 0, 10, 10, 0, 1, 0)
-                    .drawArcRelative(-20, 0, 10, 10, 0, 1, 0)
-                    .end()} />
+                    .endpoint(1, 0, 20)}
+                />
+
+
+                <path id="wire2" fill="none" stroke={variables.bigLineColor} strokeWidth={variables.bigStrokeWidth} d={new SVGPath()
+                    .moveAbsolute(width, height * 0.25)
+                    .drawHorizontalRelative(-150)
+                    .drawLineRelative(-50, -50)
+                    .drawHorizontalRelative(-100)
+                    .drawLineRelative(-50, -50)
+                    .endpoint(-1, -1, 20)} />
+
+                <path id="wire3" fill="none" stroke={variables.bigLineColor} strokeWidth={variables.bigStrokeWidth} d={new SVGPath()
+                    .moveAbsolute(width, height * 0.25 + 10)
+                    .drawHorizontalRelative(-150 - 5)
+                    .drawLineRelative(-50, -50)
+                    .drawHorizontalRelative(-200)
+                    .endpoint(-1, 0, 20)} />
+
+                <path id="wire4" fill="none" stroke={variables.bigLineColor} strokeWidth={variables.bigStrokeWidth} d={new SVGPath()
+                    .moveAbsolute(width, height * 0.25 + 20)
+                    .drawHorizontalRelative(-150 - 10)
+                    .drawLineRelative(-50, -50)
+                    .drawHorizontalRelative(-150)
+                    .drawLineRelative(-50, 50)
+                    .drawHorizontalRelative(-100)
+                    .drawLineRelative(-50, 50)
+                    .endpoint(-1, 1, 20)} />
+
+                <path id="wire5" fill="none" stroke={variables.bigLineColor} strokeWidth={variables.bigStrokeWidth} d={new SVGPath()
+                    .moveAbsolute(width, height * 0.25 - 10)
+                    .drawHorizontalRelative(-150 + 5)
+                    .drawLineRelative(-100, -100)
+                    .endpoint(-1, -1, 20)} />
+
+
+
+
+
+
+
+
+                <path id="mainChip" className="chipShadow" fill={variables.chipColor} d={new SVGPath()
+                    .moveAbsolute(width / 2 - this.saferoomWidth / 2, height / 2 - this.saferoomHeight / 2)
+                    .drawHorizontalRelative(this.saferoomWidth)
+                    .drawVerticalRelative(this.saferoomHeight)
+                    .drawHorizontalRelative(-this.saferoomWidth)
+                    .drawVerticalRelative(-this.saferoomHeight)
+                    .close()} />
+
             </svg>
         )
     }
 
-
-    componentDidMount() {
-        this.props.callback()
-    }
-
     renderOriginalSVG() {
         return (
-            <svg xmlns="http://www.w3.org/2000/svg" width={1000} height={650}>
+            <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" width="100%" height="100%">
                 <path id="path5" vectorEffect="non-scaling-vector" fill="transparent" stroke={variables.bigLineColor} strokeWidth={variables.bigStrokeWidth} d="M1000 470.7l-47.3-47.3h-47.3L887 441.7h-143l-45-45" />
                 <path vectorEffect="non-scaling-vector" fill="transparent" stroke={variables.bigLineColor} strokeWidth={variables.bigStrokeWidth} d="M686.3 391.7a7.8 7.8 0 1 1 15.6 0 7.8 7.8 0 0 1-15.6 0z" />
                 <path vectorEffect="non-scaling-vector" fill={variables.bigLineColor} d="M736.1 441.5a7.8 7.8 0 1 1 15.6 0 7.8 7.8 0 0 1-15.6 0" />
@@ -71,6 +112,9 @@ export default class CircuitBoard extends React.Component<{ width: number, heigh
                 <path vectorEffect="non-scaling-vector" fill="transparent" stroke={variables.bigLineColor} strokeWidth={variables.bigStrokeWidth} d="M480.3 157.2a7.8 7.8 0 1 1 15.6 0 7.8 7.8 0 0 1-15.6 0z" />
 
 
+                <path vectorEffect="non-scaling-vector" fill={variables.squaresColor} d="M901.3 180.8H888v-13h13.2v13m19.3 0h-13.1v-13h13.1v13m19.3 0h-13.1v-13h13.1v13m19.4 0H946v-13h13.2v13m19.3 0h-13.1v-13h13.1v13M52 90.6H38.8V77.4H52v13.2m19.3 0H58.2V77.4h13v13.2m19.4 0H77.5V77.4h13.1v13.2m19.4 0H96.8V77.4H110v13.2m19.3 0h-13.1V77.4h13v13.2m216-54.4h-13V23h13v13m19.4 0h-13.1v-13h13.1v13m19.3 0h-13v-13h13v13m19.4 0H390v-13h13.2v13m19.3 0h-13.1v-13h13.1v13M662 494.8h-13.2v-13.1H662v13.1m19.3 0h-13.1v-13.1h13.1v13.1m19.3 0h-13.1v-13.1h13.1v13.1m19.4 0h-13.2v-13.1H720v13.1m19.3 0h-13.2v-13.1h13.2v13.1m-550 123.6h-13.1V605h13.1v13.2m19.3 0h-13V605h13v13.2m19.4 0h-13.2V605H228v13.2m19.3 0h-13.1V605h13.1v13.2m19.3 0h-13V605h13v13.2M882 542h-13.1V529h13.1V542m19.4 0H888V529h13.2V542m19.3 0h-13.1V529h13.1V542m19.3 0h-13.1V529h13.1V542m19.4 0H946V529h13.2V542M32.6 456H19.5v-13.1h13.1v13.1m19.4 0H38.8v-13.1H52v13.1m19.3 0H58.2v-13.1h13v13.1m19.4 0H77.5v-13.1h13.1v13.1m19.4 0H96.8v-13.1H110v13.1m524.7-333.5h-13v-13.1h13v13.1m19.4 0h-13.2v-13.1h13.2v13.1m19.3 0h-13.1v-13.1h13.1v13.1m19.3 0h-13.1v-13.1h13.1v13.1m19.4 0h-13.2v-13.1h13.2v13.1" />
+                <path vectorEffect="non-scaling-vector" fill={variables.bigBarsColor} d="M690.2 235.4h-2.5v-34h2.5v34m13.4 0H701v-34h2.6v34m6.6 0h-2.5v-34h2.5v34m6.6 0h-2.5v-34h2.5v34m7 0h-2.5v-34h2.6v34m5.2 0h-2.5v-34h2.5v34m21.4 0H748v-34h2.5v34m-12.6 0h-2.5v-34h2.5v34m18.8 0h-2.5v-34h2.5v34M441.8 577.5h-2.5v-33.9h2.5v33.9m13.4 0h-2.5v-33.9h2.5v33.9m6.6 0h-2.5v-33.9h2.5v33.9m6.6 0h-2.5v-33.9h2.5v33.9m7 0H473v-33.9h2.5v33.9m5.3 0h-2.6v-33.9h2.6v33.9m21.3 0h-2.5v-33.9h2.5v33.9m-12.5 0H487v-33.9h2.6v33.9m18.7 0h-2.5v-33.9h2.5v33.9m246-147.6h-2.6v-34h2.5v34m13.3 0H765v-34h2.5v34m6.7 0h-2.6v-34h2.6v34m6.6 0h-2.5v-34h2.5v34m7 0h-2.5v-34h2.6v34m5.2 0h-2.5v-34h2.5v34m21.4 0H812v-34h2.5v34m-12.6 0h-2.5v-34h2.5v34m18.8 0h-2.5v-34h2.5v34m-807.3 116H11V512h2.5v34m13.3 0h-2.5v-34h2.5v34m6.7 0h-2.6v-34h2.6v34m6.6 0h-2.5v-34H40v34m7 0h-2.5v-34H47v34m5.3 0h-2.5v-34h2.5v34m21.4 0h-2.5v-34h2.5v34m-12.6 0h-2.5v-34h2.5v34m18.8 0h-2.5v-34h2.5v34m590.4 89.2h-2.5v-33.9h2.5v34m13.4 0H681v-34h2.6v34m6.6 0h-2.5v-34h2.5v34m6.6 0h-2.5v-34h2.5v34m7 0h-2.5v-34h2.6v34m5.2 0h-2.5v-34h2.5v34m21.4 0h-2.5v-34h2.5v34m-12.6 0h-2.5v-34h2.5v34m18.8 0h-2.5v-34h2.5v34m171.6-226.7h-2.5v-33.9h2.5v34m13.3 0h-2.5v-34h2.5v34m6.6 0h-2.5v-34h2.5v34m6.6 0h-2.5v-34h2.5v34m7.1 0h-2.5v-34h2.5v34m5.3 0h-2.5v-34h2.5v34m21.4 0h-2.5v-34h2.5v34m-12.6 0h-2.5v-34h2.5v34m18.7 0h-2.5v-34h2.5v34M20.4 235.3h-2.6v-34h2.6v34m13.3 0h-2.5v-34h2.5v34m6.6 0h-2.5v-34h2.5v34m6.6 0h-2.5v-34H47v34m7 0h-2.4v-34H54v34m5.3 0h-2.5v-34h2.5v34m21.4 0H78v-34h2.6v34m-12.6 0h-2.5v-34H68v34m18.7 0h-2.5v-34h2.5v34m27-41.5h-2.6v-34h2.6v34m13.3 0h-2.5v-34h2.5v34m6.6 0h-2.5v-34h2.5v34m6.6 0h-2.5v-34h2.5v34m7 0H145v-34h2.5v34m5.3 0h-2.5v-34h2.5v34m21.4 0h-2.6v-34h2.6v34m-12.6 0H159v-34h2.5v34m18.7 0h-2.5v-34h2.5v34M488.1 90.7h-2.5v-34h2.5v34m13.3 0h-2.5v-34h2.5v34m6.6 0h-2.5v-34h2.5v34m6.6 0h-2.5v-34h2.5v34m7.1 0h-2.5v-34h2.5v34m5.3 0h-2.5v-34h2.5v34m21.4 0h-2.5v-34h2.5v34m-12.6 0h-2.5v-34h2.5v34m18.7 0H552v-34h2.5v34" />
+                <path vectorEffect="non-scaling-vector" fill={variables.smallBarsColor} d="M888.4 100h-3.2v9.6h3.2V100m17.3 0h-3.3v9.5h3.3V100m8.5 0H911v9.5h3.2V100m8.6 0h-3.2v9.5h3.2V100m9.1 0h-3.2v9.5h3.2V100m6.9 0h-3.3v9.5h3.3V100m27.7 0h-3.3v9.5h3.3V100m-16.3 0h-3.3v9.5h3.3V100m24.2 0h-3.2v9.5h3.2V100M473.3 2.7H470v9.5h3.3V2.7m17.2 0h-3.2v9.5h3.2V2.7m8.6 0h-3.3v9.5h3.3V2.7m8.5 0h-3.2v9.5h3.2V2.7m9.2 0h-3.3v9.5h3.3V2.7m6.8 0h-3.2v9.5h3.2V2.7m27.7 0H548v9.5h3.3V2.7m-16.3 0h-3.2v9.5h3.2V2.7m24.3 0H556v9.5h3.3V2.7m-448 292H108v9.6h3.3v-9.6m17.2 0h-3.2v9.6h3.2v-9.6m8.6 0h-3.3v9.6h3.3v-9.6m8.6 0h-3.3v9.6h3.3v-9.6m9.1 0h-3.2v9.6h3.2v-9.6m6.8 0h-3.2v9.6h3.2v-9.6m27.7 0h-3.2v9.6h3.2v-9.6m-16.3 0h-3.2v9.6h3.2v-9.6m24.3 0H194v9.6h3.3v-9.6M824 34.1h-3.3v9.6h3.3V34m17.2 0h-3.2v9.6h3.2V34m8.6 0h-3.3v9.6h3.3V34m8.6 0h-3.3v9.6h3.3V34m9 0h-3.2v9.6h3.3V34m6.8 0h-3.2v9.6h3.2V34m27.7 0H899v9.6h3.2V34m-16.3 0h-3.2v9.6h3.2V34m24.3 0h-3.3v9.6h3.3V34M336 565.6h-3.3v9.5h3.2v-9.5m17.2 0H350v9.5h3.2v-9.5m8.6 0h-3.2v9.5h3.2v-9.5m8.6 0H367v9.5h3.3v-9.5m9.1 0h-3.2v9.5h3.2v-9.5m6.9 0H383v9.5h3.3v-9.5m27.6 0h-3.2v9.5h3.2v-9.5m-16.3 0h-3.2v9.5h3.2v-9.5m24.3 0h-3.3v9.5h3.3v-9.5m82.5-334h-3.3v9.5h3.3v-9.6m17.2 0h-3.2v9.6h3.2v-9.6m8.6 0H527v9.6h3.3v-9.6m8.6 0h-3.3v9.6h3.3v-9.6m9.1 0h-3.2v9.6h3.2v-9.6m6.8 0h-3.2v9.6h3.2v-9.6m27.7 0h-3.2v9.6h3.2v-9.6m-16.3 0H563v9.6h3.2v-9.6m24.3 0h-3.3v9.6h3.3v-9.6m92 116h-3.3v9.5h3.3v-9.5m17.2 0h-3.2v9.5h3.2v-9.5m8.6 0H705v9.5h3.3v-9.5m8.6 0h-3.3v9.5h3.3v-9.5m9.1 0h-3.2v9.5h3.2v-9.5m6.8 0h-3.2v9.5h3.2v-9.5m27.7 0h-3.2v9.5h3.2v-9.5m-16.3 0H741v9.5h3.2v-9.5m24.3 0h-3.3v9.5h3.3v-9.5m89 141.2h-3.3v9.6h3.3v-9.6m17.2 0h-3.2v9.6h3.2v-9.6m8.6 0H880v9.6h3.3v-9.6m8.6 0h-3.3v9.6h3.3v-9.6m9.1 0h-3.3v9.6h3.3v-9.6m6.8 0h-3.2v9.6h3.2v-9.6m27.7 0h-3.2v9.6h3.2v-9.6m-16.3 0H916v9.6h3.2v-9.6m24.3 0h-3.3v9.6h3.3v-9.6" />
 
 
 

@@ -12,16 +12,10 @@ export default class Home extends React.Component {
     render() {
         return (
             <Content>
-                <Intro height="calc(100% - 150px)">
+                <Intro>
                     <h1>
-                        <Translate>
-                            {({ translate }) => (
-                                <span className="anim-text-flow">
-                                    {mapCharsIntoSpans("Sean Greenhow")} <br />
-                                    {mapCharsIntoSpans(`${translate("jobtitle")}`)}
-                                </span>
-                            )}
-                        </Translate>
+                        Sean Greenhow <br />
+                        <Translate id="jobtitle" />.
                     </h1>
                 </Intro>
                 <div className="spacer" />

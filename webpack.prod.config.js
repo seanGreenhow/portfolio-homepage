@@ -3,19 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const webpack = require("webpack")
 
 module.exports = (env, argv) => {
-
-  const plugins = [
-    new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
-      filename: "bundle.css",
-      chunkFilename: "[id].css"
-    })
-  ]
-  if (argv.mode == "production") plugins.push(new webpack.DefinePlugin({
-    'process.env.NODE_ENV': JSON.stringify('production')
-  }))
-
+  console.log(argv.mode)
   return ({
     entry: [
       '@babel/polyfill',
@@ -94,7 +82,17 @@ module.exports = (env, argv) => {
       }
       ]
     },
-    plugins,
+    plugins: [
+      new MiniCssExtractPlugin({
+        // Options similar to the same options in webpackOptions.output
+        // both options are optional
+        filename: "bundle.css",
+        chunkFilename: "[id].css"
+      }),
+      argv.mode == "production" ? new webpack.DefinePlugin({
+        'process.env.NODE_ENV': JSON.stringify('production')
+      }) : false
+    ],
     resolve: {
       extensions: ['.ts', '.js', '.tsx', '.jsx', '.json']
     },

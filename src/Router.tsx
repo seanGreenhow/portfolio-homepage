@@ -37,7 +37,7 @@ class Main extends React.Component<LocalizeContextProps> {
                     <Switch>
                         <Route path="/projects" component={() => <Projects />} />
                         <Route path="/attribution" component={() => <Attribution />} />
-                        <Route component={() => /*<Home />*/ null} />
+                        <Route component={() => <Home />} />
                     </Switch>
                 </div>
             </div>

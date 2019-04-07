@@ -15,46 +15,10 @@ export default class Background extends React.Component<{}, { width: number, hei
         return (
             <div id="background" ref={this.ref} >
                 {this.state.height && this.state.width &&
-                    <CircuitBoard height={this.state.height} width={this.state.width} callback={() => {
-                        this.animateWire('wire1', true)
-                    }} />
+                    <CircuitBoard height={this.state.height} width={this.state.width} />
                 }
             </div>
         )
-    }
-
-    animateWire(wireID: string, loop: boolean = false, duration: number = Math.random() * 9000 + 1000) {
-        const path = anime.path(`#circuit-board #${wireID}`);
-        const delay = Math.random() * 5000
-        const endDelay = Math.random() * 5000
-
-        anime({
-            targets: this.createElectron(),
-            keyframes: [
-                {
-                    opacity: 0,
-                    duration: 0
-                },
-                {
-                    opacity: 1,
-                    duration: 0,
-                    delay
-                },
-                {
-                    translateX: path('x'),
-                    translateY: path('y'),
-                    rotate: path('angle'),
-                    duration
-                },
-                {
-                    opacity: 0,
-                    duration: 0,
-                    endDelay
-                }
-            ],
-            easing: 'linear',
-            loop
-        });
     }
 
     updateDimensions() {
@@ -75,14 +39,5 @@ export default class Background extends React.Component<{}, { width: number, hei
 
     componentWillUnmount() {
         window.removeEventListener("resize", () => this.updateDimensions());
-    }
-
-    createElectron(): string {
-        const electronID = `electron_${uuid.v4()}`
-        const electron = document.createElement("div")
-        electron.setAttribute("class", "electron")
-        electron.setAttribute("id", electronID)
-        document.getElementById('background').appendChild(electron)
-        return `#${electronID}`
     }
 }

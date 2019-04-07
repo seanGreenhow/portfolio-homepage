@@ -52,8 +52,22 @@ export class SVGPath {
     }
 
 
+    drawCircle(directionX: (-1 | 0 | 1), directionY: (-1 | 0 | 1), diameter: number): SVGPath {
+        const size = directionX != 0 && directionY != 0
+            ? Math.sqrt(Math.pow(diameter, 2) / 2)
+            : diameter
 
-    closeShape(): string {
+        this.drawArcRelative(directionX * size, directionY * size, 10, 10, 0, 1, 1)
+        this.drawArcRelative(- directionX * size, - directionY * size, 10, 10, 0, 1, 1)
+        return this
+    }
+
+    endpoint(directionX: (-1 | 0 | 1), directionY: (-1 | 0 | 1), diameter: number): string {
+        this.drawCircle(directionX, directionY, diameter)
+        return this.end()
+    }
+
+    close(): string {
         this.createOrAppend('z')
         return this.end()
     }

@@ -6,5 +6,6 @@ export default {
     dotColor: '#ca1a1a',
     squaresColor: '#9E0B0B',
     bigBarsColor: '#BF2121',
-    smallBarsColor: '#DA4747'
+    smallBarsColor: '#DA4747',
+    chipColor: '#111111'
 }

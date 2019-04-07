@@ -9,7 +9,7 @@ export default class Projects extends React.Component {
             <Content>
                 <Intro>
                     <h1>
-                    <span className="anim-text-flow">
+                        <span className="anim-text-flow">
                             {mapCharsIntoSpans("Projects &")} <br />
                             {mapCharsIntoSpans("Work Samples.")}
                         </span>
