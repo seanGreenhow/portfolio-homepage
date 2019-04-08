@@ -9,10 +9,15 @@ export default class Electron extends React.Component<{ wireID: any, size: numbe
     animation: any
 
     render() {
-        return (<rect id={this.state.id} fill="#FF0000"
-            x={-this.props.size} y={-this.props.size / 2} width={this.props.size * 2} height={this.props.size}
-            filter="url(#electronglow)"
-        />)
+        return (
+            <g id={this.state.id} filter="url(#shadow)">
+                <rect filter="url(#shadow)"
+                    rx={this.props.size / 2} ry={this.props.size / 2}
+                    fill="#FF0000" x={-this.props.size} y={-this.props.size / 2}
+                    width={this.props.size * 2} height={this.props.size}
+                />
+            </g>
+        )
     }
 
     createAnimation() {
@@ -35,8 +40,8 @@ export default class Electron extends React.Component<{ wireID: any, size: numbe
                     delay
                 },
                 {
-                    x: path('x'),
-                    y: path('y'),
+                    translateX: path('x'),
+                    translateY: path('y'),
                     rotate: path('angle'),
                     duration
                 },

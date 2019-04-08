@@ -1,9 +1,8 @@
 import * as React from "react"
 import variables from "../../variables"
-import { SVGPath } from "./SVGPath";
-import AnimatedWire from "./Wire";
-
-type SafeAreaCoordinates = { x1: number, x2: number, y1: number, y2: number }
+import { SVGPath } from "./SVGPath"
+import Wire from "./Wire"
+import Chip from "./Chip"
 
 export default class CircuitBoard extends React.Component<{ width: number, height: number }> {
     private readonly saferoomHeight: number = 100
@@ -14,26 +13,53 @@ export default class CircuitBoard extends React.Component<{ width: number, heigh
         const height = this.props.height
 
         return (
-            <svg id="circuit-board" xmlns="http://www.w3.org/2000/svg" width={'100%'} height={'100%'}>
+            <svg id="circuit-board" xmlns="http://www.w3.org/2000/svg"
+                width={width} height={height}>
                 <defs>
-                    <filter id="chipshadow">
-                        <feDropShadow dx="0" dy="0" stdDeviation="30" floodColor="#000000" floodOpacity="1" />
+                    <filter id="chipshadow" x="-5px" y="-5px" width="calc(100% + 10px)" height="calc(100% + 10px)">
+                        <feDropShadow dx="-1" dy="-1" stdDeviation="5" floodColor="#000000" />
                     </filter>
-                    <filter id="electronglow">
-                        <feDropShadow dx="0" dy="0" stdDeviation="10" floodColor="#FF0000" floodOpacity="1" />
+                    <filter id="shadow" x="-5px" y="-5px" width="calc(100% + 10px)" height="calc(100% + 10px)">
+                        <feDropShadow dx="-1" dy="-1" stdDeviation="5" floodColor="#FF0000" />
                     </filter>
                 </defs>
 
-                <AnimatedWire stroke={variables.bigLineColor} width={parseInt(variables.bigStrokeWidth)} electrons={4} path={new SVGPath()
+                <Wire stroke={variables.bigLineColor} width={variables.bigStrokeWidth} electrons={2} path={new SVGPath()
                     .moveAbsolute(0, height * 0.5)
+                    .drawHorizontalRelative(300)
+                    .drawLineRelative(100, -100)
                     .drawHorizontalRelative(250)
+                    .endpoint(1, 0, 20)}
+                />
+
+                <Wire stroke={variables.bigLineColor} width={variables.bigStrokeWidth} electrons={2} path={new SVGPath()
+                    .moveAbsolute(0, height * 0.5 + 10)
+                    .drawHorizontalRelative(300 + 5)
+                    .drawLineRelative(100, -100)
+                    .drawHorizontalRelative(200)
+                    .drawLineRelative(50, 50)
+                    .endpoint(1, 1, 20)}
+                />
+
+                <Wire stroke={variables.bigLineColor} width={variables.bigStrokeWidth} electrons={2} path={new SVGPath()
+                    .moveAbsolute(0, height * 0.5 - 10)
+                    .drawHorizontalRelative(300 - 5)
+                    .drawLineRelative(150, -150)
+                    .drawHorizontalRelative(100)
+                    .endpoint(1, 0, 20)}
+                />
+
+                <Wire stroke={variables.bigLineColor} width={variables.bigStrokeWidth} electrons={2} path={new SVGPath()
+                    .moveAbsolute(0, height * 0.5 + 20)
+                    .drawHorizontalRelative(300 + 10)
                     .drawLineRelative(50, -50)
                     .drawHorizontalRelative(100)
                     .endpoint(1, 0, 20)}
                 />
 
 
-                <path id="wire2" fill="none" stroke={variables.bigLineColor} strokeWidth={variables.bigStrokeWidth} d={new SVGPath()
+
+                <Wire stroke={variables.bigLineColor} width={variables.bigStrokeWidth} electrons={2} path={new SVGPath()
                     .moveAbsolute(width, height * 0.25)
                     .drawHorizontalRelative(-150)
                     .drawLineRelative(-50, -50)
@@ -41,14 +67,14 @@ export default class CircuitBoard extends React.Component<{ width: number, heigh
                     .drawLineRelative(-50, -50)
                     .endpoint(-1, -1, 20)} />
 
-                <path id="wire3" fill="none" stroke={variables.bigLineColor} strokeWidth={variables.bigStrokeWidth} d={new SVGPath()
+                <Wire stroke={variables.bigLineColor} width={variables.bigStrokeWidth} electrons={2} path={new SVGPath()
                     .moveAbsolute(width, height * 0.25 + 10)
                     .drawHorizontalRelative(-150 - 5)
                     .drawLineRelative(-50, -50)
                     .drawHorizontalRelative(-200)
                     .endpoint(-1, 0, 20)} />
 
-                <path id="wire4" fill="none" stroke={variables.bigLineColor} strokeWidth={variables.bigStrokeWidth} d={new SVGPath()
+                <Wire stroke={variables.bigLineColor} width={variables.bigStrokeWidth} electrons={2} path={new SVGPath()
                     .moveAbsolute(width, height * 0.25 + 20)
                     .drawHorizontalRelative(-150 - 10)
                     .drawLineRelative(-50, -50)
@@ -58,26 +84,78 @@ export default class CircuitBoard extends React.Component<{ width: number, heigh
                     .drawLineRelative(-50, 50)
                     .endpoint(-1, 1, 20)} />
 
-                <path id="wire5" fill="none" stroke={variables.bigLineColor} strokeWidth={variables.bigStrokeWidth} d={new SVGPath()
+                <Wire stroke={variables.bigLineColor} width={variables.bigStrokeWidth} electrons={2} path={new SVGPath()
                     .moveAbsolute(width, height * 0.25 - 10)
                     .drawHorizontalRelative(-150 + 5)
                     .drawLineRelative(-100, -100)
                     .endpoint(-1, -1, 20)} />
 
 
+                <Wire stroke={variables.smallLineColor} width={variables.smallStrokeWidth} electrons={2} path={new SVGPath()
+                    .moveAbsolute(width * 0.5, 0)
+                    .drawVerticalRelative(150)
+                    .drawLineRelative(-50, 50)
+                    .drawVerticalRelative(50)
+                    .drawLineRelative(50, 50)
+                    .drawVerticalRelative(300)
+                    .end()
+                } />
+
+                <Wire stroke={variables.smallLineColor} width={variables.smallStrokeWidth} electrons={2} path={new SVGPath()
+                    .moveAbsolute(width * 0.5 + 5, 0)
+                    .drawVerticalRelative(150 + 2.5)
+                    .drawLineRelative(-50, 50)
+                    .drawVerticalRelative(50 - 5)
+                    .drawLineRelative(58, 58)
+                    .drawVerticalRelative(300)
+                    .end()
+                } />
+
+                <Wire stroke={variables.smallLineColor} width={variables.smallStrokeWidth} electrons={2} path={new SVGPath()
+                    .moveAbsolute(width * 0.5 + 10, 0)
+                    .drawVerticalRelative(150 + 5)
+                    .drawLineRelative(-50, 50)
+                    .drawVerticalRelative(50 - 10)
+                    .drawLineRelative(66, 66)
+                    .drawVerticalRelative(300)
+                    .end()
+                } />
+
+                <Wire stroke={variables.smallLineColor} width={variables.smallStrokeWidth} electrons={2} path={new SVGPath()
+                    .moveAbsolute(width * 0.5 + 15, 0)
+                    .drawVerticalRelative(150 + 7.5)
+                    .drawLineRelative(-50, 50)
+                    .drawVerticalRelative(50 - 15)
+                    .drawLineRelative(74, 74)
+                    .drawVerticalRelative(200)
+                    .end()
+                } />
 
 
 
 
 
 
-                <path id="mainChip" className="chipShadow" fill={variables.chipColor} d={new SVGPath()
-                    .moveAbsolute(width / 2 - this.saferoomWidth / 2, height / 2 - this.saferoomHeight / 2)
-                    .drawHorizontalRelative(this.saferoomWidth)
-                    .drawVerticalRelative(this.saferoomHeight)
-                    .drawHorizontalRelative(-this.saferoomWidth)
-                    .drawVerticalRelative(-this.saferoomHeight)
-                    .close()} />
+
+
+
+
+                <Wire stroke={variables.bigLineColor} width={variables.bigStrokeWidth} electrons={2} path={new SVGPath()
+                    .moveAbsolute(width * 0.5 + 150, height * 0.5 + 19.5)
+                    .drawHorizontalRelative(200)
+                    .drawLineRelative(100, 100)
+                    .drawHorizontalRelative(150)
+                    .end()
+                } />
+
+
+
+                <Chip x={width * 0.5 - this.saferoomWidth / 2} y={height / 2 - this.saferoomHeight / 2}
+                    width={this.saferoomWidth} height={this.saferoomHeight} />
+
+                <Chip x={100} y={200} width={50} height={100} />
+
+                <Chip x={width - 300} y={height - 100} width={150} height={50} />
 
             </svg>
         )

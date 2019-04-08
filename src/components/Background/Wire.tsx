@@ -1,9 +1,8 @@
 import * as React from "react"
 import uuid = require("uuid")
-import anime from 'animejs'
 import Electron from "./Electron";
 
-export default class AnimatedWire extends React.Component<{
+export default class Wire extends React.Component<{
     path: string,
     electrons?: number,
     fill?: string,
@@ -21,8 +20,6 @@ export default class AnimatedWire extends React.Component<{
     }
 
     render() {
-
-
         return (<g>
             <path id={this.state.id}
                 fill={this.props.fill}
@@ -32,7 +29,6 @@ export default class AnimatedWire extends React.Component<{
             />
 
             {[...Array(this.props.electrons)].map((_, id) => <Electron key={id} wireID={this.state.id} size={this.props.width} />)}
-
         </g>)
     }
 }

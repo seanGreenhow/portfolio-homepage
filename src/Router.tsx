@@ -1,12 +1,11 @@
 import * as React from "react"
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { renderToStaticMarkup } from "react-dom/server";
-import Home from "./pages/Home";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import { renderToStaticMarkup } from "react-dom/server"
+import Home from "./pages/Home"
 import * as config from "../config.json"
-import Background from "./components/Background";
-import Projects from "./pages/Projects";
-import Attribution from "./pages/Attribution";
-import { withLocalize, LocalizeContextProps } from "react-localize-redux";
+import Background from "./components/Background"
+import Projects from "./pages/Projects"
+import { withLocalize, LocalizeContextProps } from "react-localize-redux"
 
 import * as en_translation from '../lang/en.localization.json'
 import * as de_translation from '../lang/en.localization.json'
@@ -36,7 +35,6 @@ class Main extends React.Component<LocalizeContextProps> {
                 <div className="content fill">
                     <Switch>
                         <Route path="/projects" component={() => <Projects />} />
-                        <Route path="/attribution" component={() => <Attribution />} />
                         <Route component={() => <Home />} />
                     </Switch>
                 </div>
