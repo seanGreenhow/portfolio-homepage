@@ -2,8 +2,7 @@ import * as React from "react"
 import Intro from "../../components/Intro";
 import Content from "../../components/Content";
 import { Translate } from "react-localize-redux";
-import * as ScrollMagic from 'scrollmagic'
-import { TweenMax } from 'gsap'
+//import * as ScrollMagic from 'scrollmagic'
 
 export default class Home extends React.Component {
     render() {
@@ -26,9 +25,11 @@ export default class Home extends React.Component {
     }
 
     componentDidMount() {
+        /*
         var controller = new ScrollMagic.Controller({ container: '.simplebar-content' });
         var scene = new ScrollMagic.Scene({ duration: '100%', offset: 1 })
             .addTo(controller)
             .setTween(TweenMax.to(".background", 0.5, { opacity: 0.3 }))
+            */
     }
 }

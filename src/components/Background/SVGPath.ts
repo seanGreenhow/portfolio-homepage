@@ -57,8 +57,8 @@ export class SVGPath {
             ? Math.sqrt(Math.pow(diameter, 2) / 2)
             : diameter
 
-        this.drawArcRelative(directionX * size, directionY * size, 10, 10, 0, 1, 1)
-        this.drawArcRelative(- directionX * size, - directionY * size, 10, 10, 0, 1, 1)
+        this.drawArcRelative(directionX * size, directionY * size, diameter / 2, diameter / 2, 0, 1, 0)
+        this.drawArcRelative(- directionX * size, - directionY * size, diameter / 2, diameter / 2, 0, 1, 0)
         return this
     }
 

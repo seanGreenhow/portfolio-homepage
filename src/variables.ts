@@ -8,5 +8,5 @@ export default {
     bigBarsColor: '#BF2121',
     smallBarsColor: '#DA4747',
     chipColor: '#222222',
-    chipConnectorColor: '#B28800'
+    chipConnectorColor: '#7F6719'
 }
