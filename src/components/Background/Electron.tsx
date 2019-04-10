@@ -21,9 +21,9 @@ export default class Electron extends React.Component<{ wireID: any, size: numbe
     }
 
     createAnimation() {
-        const duration = Math.random() * 7000 + 3000
-        const delay = Math.random() * 10000
-        const endDelay = Math.random() * 10000
+        const duration = Math.random() * 10000 + 5000
+        const delay = Math.random() * 20000
+        const endDelay = Math.random() * 20000
 
         const path = anime.path(`#${this.props.wireID}`)
 

@@ -2,21 +2,18 @@
   position: relative;
   left: 0;
   right: 0;
-  width: 300px;
-  height: 100px;
   margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   h1 {
-    height: 100px;
-    width: 300px;
     text-align: left;
     font-size: 36px;
-    padding: 14px;
-    vertical-align: middle;
-    line-height: 40px;
-
-    span {
-      vertical-align: middle;
-    }
+    padding-top: 2px;
+    padding-left: 14px;
+    padding-right: 14px;
+    line-height: 36px;
+    font-family: "Bebas Neue";
   }
 }

@@ -1,4 +1,10 @@
 import * as React from "react"
+import * as ReactDOMServer from 'react-dom/server'
+
+const Noscript = props => {
+    const staticMarkup = ReactDOMServer.renderToStaticMarkup(props.children);
+    return <noscript dangerouslySetInnerHTML={{ __html: staticMarkup }} />;
+};
 
 export default class HTML extends React.Component {
     render() {
@@ -7,11 +13,21 @@ export default class HTML extends React.Component {
                 <title>Sean Greenhow - Full Stack Web!</title>
                 <link rel="stylesheet" href="bundle.css" />
                 <script src="bundle.js"></script>
-                <noscript>
+                <Noscript>
                     <style>
-                        [data-simplebar] {"{"} overflow: auto; {"}"}
+                        .chat {"{"}
+                        position: relative;
+                        {"}"}
+                        .chat .message {"{"}
+                        height: auto;
+                        opacity: 1;
+                        {"}"}
+                        .simplebar-content {"{"}
+                        overflow-y: auto;
+                        overflow-x: hidden;
+                        {"}"}
                     </style>
-                </noscript>
+                </Noscript>
             </head>
             <body>
                 <div id="root" className="fill">{this.props.children}</div>

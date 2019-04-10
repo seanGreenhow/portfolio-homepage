@@ -12,19 +12,18 @@
   position: relative;
   left: 0;
   right: 0;
-  width: 300px;
-  height: 100px;
-  margin: auto; }
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
   .header h1 {
-    height: 100px;
-    width: 300px;
     text-align: left;
     font-size: 36px;
-    padding: 14px;
-    vertical-align: middle;
-    line-height: 40px; }
-    .header h1 span {
-      vertical-align: middle; }
+    padding-top: 2px;
+    padding-left: 14px;
+    padding-right: 14px;
+    line-height: 36px;
+    font-family: "Bebas Neue"; }
 
 .spacer {
   height: 200px; }
@@ -60,6 +59,53 @@ nav {
       vertical-align: middle; }
     nav a.active {
       color: #e71616; }
+    @media screen and (max-width: 500px) {
+      nav a .text {
+        display: none; } }
+
+.chat {
+  width: 50%;
+  max-width: 550px;
+  min-width: 350px;
+  padding: 30px;
+  position: fixed;
+  bottom: 0; }
+  .chat .message {
+    height: 0;
+    opacity: 0;
+    overflow: hidden; }
+  .chat .text {
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border-bottom-left-radius: 0;
+    padding: 10px;
+    color: #222222;
+    margin: 10px; }
+    .chat .text:before {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: -10px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 0 10px 10px;
+      border-color: transparent transparent #ffffff transparent; }
+  .chat a {
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+    margin: 5px;
+    background-color: #DDDDDD;
+    border-color: #EEEEEE;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid; }
+
+.spacer {
+  height: 500px; }
 
 #background {
   position: absolute;
@@ -70,16 +116,7 @@ nav {
   bottom: 0;
   right: 0;
   overflow: hidden;
-  margin: 0 auto;
-  /*
-  .wrapper {
-    position: relative;
-    float: right;
-    right: 50%;
-
-    
-  }
-  */ }
+  margin: 0 auto; }
   #background #circuit-board {
     position: absolute;
     margin: auto;
@@ -89,12 +126,167 @@ nav {
     left: 50%;
     transform: translate(-50%, 0); }
 
+#projects {
+  opacity: 0;
+  position: relative;
+  display: flex;
+  max-width: 800px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  margin-top: -25%;
+  width: 100%; }
+  #projects #timeline {
+    width: 10px;
+    background-color: #000000;
+    order: 2; }
+  #projects .left {
+    order: 1; }
+    #projects .left .inner .title:before {
+      right: -10px;
+      border-width: 35px 0 35px 10px;
+      border-color: transparent transparent transparent #7c0a04; }
+  #projects .right {
+    order: 3; }
+    #projects .right .inner .title:before {
+      left: -10px;
+      border-width: 35px 10px 35px 0;
+      border-color: transparent #7c0a04 transparent transparent; }
+  #projects .right,
+  #projects .left {
+    flex: 1;
+    position: relative; }
+  #projects .project {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    width: 100%; }
+    #projects .project .inner {
+      flex: 1;
+      margin: 1px 20px;
+      display: flex;
+      flex-direction: column; }
+      #projects .project .inner .title {
+        color: #EEEEEE;
+        padding: 10px;
+        border-radius: 2px;
+        background-color: #7c0a04;
+        position: relative;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        #projects .project .inner .title:before {
+          content: '';
+          display: block;
+          position: absolute;
+          bottom: 0;
+          top: 0;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-radius: 2px; }
+      #projects .project .inner .extra {
+        flex: 1;
+        padding: 10px;
+        background-color: #d90b0017;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        font-size: 14px;
+        color: #BBBBBB; }
+        #projects .project .inner .extra .description {
+          margin-bottom: 5px; }
+        #projects .project .inner .extra ul {
+          margin-bottom: 5px; }
+        #projects .project .inner .extra a {
+          display: block;
+          font-size: 12px; }
+          #projects .project .inner .extra a:hover {
+            color: #AAAAAA; }
+
+#more {
+  text-align: center;
+  margin-top: 50px; }
+
+.project-message {
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 550px;
+  width: 100%;
+  color: #222222;
+  position: relative;
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  left: 0;
+  right: 0;
+  border-bottom-left-radius: 0; }
+  .project-message a {
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+    margin: 5px;
+    background-color: #DDDDDD;
+    border-color: #EEEEEE;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid; }
+  .project-message:before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: -10px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 10px 10px;
+    border-color: transparent transparent #ffffff transparent; }
+
+#contact {
+  max-width: 300px;
+  position: relative;
+  margin: auto;
+  left: 0;
+  right: 0;
+  width: 100%; }
+  #contact .card {
+    padding: 20px;
+    flex-direction: row;
+    background-color: #EEEEEE;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #000000;
+    color: #222222;
+    position: relative;
+    font-weight: 16px;
+    border-bottom-left-radius: 0;
+    text-align: center; }
+    #contact .card .name {
+      vertical-align: middle;
+      font-weight: bold; }
+    #contact .card .text {
+      margin: 10px 0; }
+    #contact .card svg {
+      vertical-align: middle; }
+    #contact .card:before {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: -10px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 0 10px 10px;
+      border-color: transparent transparent #ffffff transparent; }
+
 html,
 body {
   color: #dddddd;
   width: 100%;
   height: 100%;
-  font-family: "Bebas Neue";
+  font-family: "Source Sans Pro";
   font-size: 20px;
   overflow: hidden;
   background-image: linear-gradient(#0e0d0d 33%, #131212 67%); }
@@ -120,6 +312,19 @@ body {
 
 .page .content {
   position: relative; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+ul {
+  margin: 0;
+  list-style-type: none;
+  padding-left: 3px; }
+  ul li:before {
+    display: inline-block;
+    content: '-';
+    margin-right: 3px; }
 
 
 /*# sourceMappingURL=bundle.css.map*/
