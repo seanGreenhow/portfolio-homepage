@@ -9,6 +9,8 @@ import { withLocalize, LocalizeContextProps, LocalizeProvider } from "react-loca
 
 import * as en_translation from '../lang/en.localization.json'
 import * as de_translation from '../lang/en.localization.json'
+import Error404 from "./pages/Error/404";
+import Contact from "./pages/Contact";
 
 
 class App extends React.Component<LocalizeContextProps> {
@@ -35,7 +37,9 @@ class App extends React.Component<LocalizeContextProps> {
                 <div className="content fill">
                     <Switch>
                         <Route path="/projects" component={() => <Projects />} />
-                        <Route component={() => <Home />} />
+                        <Route path="/contact" component={() => <Contact />} />
+                        <Route path="/" exact component={() => <Home />} />
+                        <Route component={() => <Error404 />} />
                     </Switch>
                 </div>
             </div>

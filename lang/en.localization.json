@@ -1,3 +1,70 @@
 {
-    "jobtitle": "Full-Stack Developer"
+    "jobtitle": "Full-Stack Developer",
+    "projects": "Projects",
+    "contact": "Contact",
+    "home": "Home",
+    "website": "Website",
+    "FOwebsite": "FO-Fonds Website",
+    "FamilyOfficeWebsite": "Family Office Website",
+    "eOfficeWebsite": "IT-Devision Website",
+    "SIAppGooglePlay": "SmartInsight App (Google Play)",
+    "SIAppAppleStore": "SmartInsight App (Apple Store)",
+    "example": "Work Example",
+    "email": "E-Mail",
+    "contactText": "Want to contact me? Just send me an E-Mail!",
+    "paragraph": {
+        "first": "Hi! My name is Sean, welcome to my website!",
+        "second": "I'm a full-stack developer based in Hamburg, who loves to learn new thing everyday and some people probably would call me a nerd. 🤓 ",
+        "third": "I enjoy most genres of music and like to play video games in my spare time. But enough blabbering...",
+        "fourth": "You can check out all the things i made and worked on here: ",
+        "fifth": "Or you can get in touch with me here: "
+    },
+    "project": {
+        "Abi": {
+            "title": "Abitur",
+            "description": "at Gymnasium Christianeum, Hamburg."
+        },
+        "TUHH": {
+            "title": "Bachelor Course - Computational Informatics",
+            "description": "at Technical University Hamburg-Harburg. "
+        },
+        "HAW": {
+            "title": "Bachelor Course - Applied Informatics",
+            "description": "at Hamburg University of Applied Sciences."
+        },
+        "Latupo": {
+            "title": "Student Job - Java Backend Development",
+            "description": "at Latupo GmbH.",
+            "duties": {
+                "0": "Automatization of various eCommerce processes."
+            }
+        },
+        "HonestasStudent": {
+            "title": "Student Job - Frontend Development",
+            "description": "at Honestas Finanzmanagement GmbH.",
+            "duties": {
+                "0": "Improving the company websites.",
+                "1": "Developing the Honestas SmartInsight Webapplikation and Dataserver.",
+                "2": "PDF generation for custom investment analyses on the FO-Fonds website."
+            }
+        },
+        "topConcepts": {
+            "title": "Full Time Job - Frontend & PHP Web Developer",
+            "description": "at topConcepts GmbH.",
+            "duties": {
+                "0": "Improving and extending multiple webshops based on 'OXID eShop'."
+            }
+        },
+        "Honestas": {
+            "title": "Full Time Job - Leiter IT & Full Stack Developer",
+            "description": "at Honestas Finanzmanagement GmbH. ",
+            "duties": {
+                "0": "Automatization of all data import processes for the FO-Fonds Website.",
+                "1": "Developing the Honestas SmartInsight App with 'React-Native' and extending the core server with microservices."
+            }
+        },
+        "more": "... and more to come!",
+        "more2": "You got any questions or want me to work on one of your projects?",
+        "more3": "Just follow this link:"
+    }
 }

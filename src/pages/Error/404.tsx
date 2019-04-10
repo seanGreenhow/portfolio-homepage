@@ -9,7 +9,7 @@ export default class Error404 extends React.Component {
                 <Intro>
                     <h1>
                         ERROR 404 <br />
-                        This route was not found!
+                        Please don't panic!
                     </h1>
                 </Intro>
             </Content>

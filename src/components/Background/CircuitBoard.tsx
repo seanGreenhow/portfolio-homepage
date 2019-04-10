@@ -578,13 +578,13 @@ export default class CircuitBoard extends React.Component<{ width: number, heigh
                     width={this.saferoomWidth} height={this.saferoomHeight} />
 
                 <Chip x={100} y={200} width={50} height={100} />
-                
+
                 <Chip x={width - 300} y={height - 100} width={150} height={50} />
             </svg>
         )
     }
 
     getElectronCount() {
-        return Math.ceil(Math.random() * 2)
+        return 0
     }
 }
