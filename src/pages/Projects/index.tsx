@@ -9,7 +9,7 @@ import { FaExternalLinkAlt } from 'react-icons/fa'
 import { Link } from "react-router-dom";
 import { showMessage, clearMessages } from "../../Chat";
 
-const monthScaling = 17
+const monthScaling = 20
 
 export default class Projects extends React.Component {
     render() {
@@ -34,8 +34,7 @@ export default class Projects extends React.Component {
         projects.push(new Project(new Date(2017, 11), new Date(), "Honestas", "left",
             ["0", "1"],
             [
-                ['https://www.fo-vermoegensverwalterfonds.de', 'FOwebsite'],
-                ['https://www.e-office.xyz', 'eOfficeWebsite'],
+                ['https://mein.fo-vermoegensverwalterfonds.de', 'FOwebsite'],
                 ['https://play.google.com/store/apps/details?id=xyz.eoffice.si.app', 'SIAppGooglePlay'],
                 ['https://itunes.apple.com/de/app/honestas-smartinsight/id1453142699?ls=1', 'SIAppAppleStore']
             ]
@@ -48,9 +47,9 @@ export default class Projects extends React.Component {
         projects.push(new Project(new Date(2015, 3), new Date(2016, 10), "HonestasStudent", "right",
             ["0", "1", "2"],
             [
-                ['https://www.honestas-finanzmanagement.de', 'website'],
-                ['https://www.honestas-family-office.de', 'FamilyOfficeWebsite'],
-                ['https://www.fo-vermoegensverwalterfonds.de', 'FOwebsite']
+                ['https://www2.honestas-finanzmanagement.de', 'website'],
+                ['https://www2.honestas-family-office.de', 'FamilyOfficeWebsite'],
+                ['https://mein.fo-vermoegensverwalterfonds.de', 'FOwebsite']
             ]
         ))
 

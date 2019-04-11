@@ -10,6 +10,7 @@ export default class HTML extends React.Component {
     render() {
         return <html lang="en">
             <head>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <title>Sean Greenhow - Full Stack Web!</title>
                 <link rel="stylesheet" href="bundle.css" />
                 <script src="bundle.js"></script>

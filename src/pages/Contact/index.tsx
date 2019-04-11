@@ -23,8 +23,8 @@ export default class Contact extends React.Component {
                                 <Translate id="contactText" /> <br />
                                 <Translate id="contactText2" />
 
-                                <a href="mailto:sean@profil6.com">
-                                    <MdMail /> sean@profil6.com
+                                <a href="mailto:sean@greenhow.dev">
+                                    <MdMail /> sean@greenhow.dev
                                 </a>
                             </div>
                         </div>

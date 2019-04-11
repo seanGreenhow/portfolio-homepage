@@ -14,7 +14,7 @@ export default class CircuitBoard extends React.Component<{ width: number, heigh
 
         return (
             <svg id="circuit-board" xmlns="http://www.w3.org/2000/svg"
-                width={width} height={height}>
+                width={width} height={height} viewBox="0 0 1920 1080">
                 <defs>
                     <filter id="chipshadow" x="-5px" y="-5px" width="calc(100% + 10px)" height="calc(100% + 10px)">
                         <feDropShadow dx="-1" dy="-1" stdDeviation="5" floodColor="#000000" />
