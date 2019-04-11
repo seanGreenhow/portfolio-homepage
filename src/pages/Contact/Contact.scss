@@ -1,47 +1,5 @@
 #contact {
-    max-width: 300px;
-    position: relative;
-    margin: auto;
-    left: 0;
-    right: 0;
-    width: 100%;
-
-    .card {
-        padding: 20px;
-        flex-direction: row;
-        background-color: #EEEEEE;
-        border-radius: 5px;
-        box-shadow: 0 0 10px #000000;
-        color: #222222;
-        position: relative;
-        font-weight: 16px;
-        border-bottom-left-radius: 0;
-        text-align: center;
-
-        .name {
-            vertical-align: middle;
-            font-weight: bold;
-        }
-
-        .text {
-            margin: 10px 0;
-        }
-
-        svg {
-            vertical-align: middle;
-        }
-
-        &:before {
-            content: '';
-            display: block;
-            position: absolute;
-            bottom: 0;
-            left: -10px;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 0 0 10px 10px;
-            border-color: transparent transparent #ffffff transparent;
-        }
+    .spacer {
+        height: 150px;
     }
 }

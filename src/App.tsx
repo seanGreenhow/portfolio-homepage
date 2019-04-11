@@ -11,7 +11,7 @@ import * as en_translation from '../lang/en.localization.json'
 import * as de_translation from '../lang/en.localization.json'
 import Error404 from "./pages/Error/404";
 import Contact from "./pages/Contact";
-
+import './Chat.scss'
 
 class App extends React.Component<LocalizeContextProps> {
 

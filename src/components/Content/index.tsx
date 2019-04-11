@@ -1,5 +1,4 @@
 import * as React from "react"
-import './Content.scss'
 import * as SimpleBar from 'simplebar-react';
 const Bar = SimpleBar.default ? SimpleBar.default : SimpleBar
 import Navigation from "../Navigation";

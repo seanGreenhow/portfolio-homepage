@@ -1,6 +1,6 @@
 {
     "jobtitle": "Full-Stack Developer",
-    "projects": "Projects",
+    "projects": "Résumé",
     "contact": "Contact",
     "home": "Home",
     "website": "Website",
@@ -11,7 +11,8 @@
     "SIAppAppleStore": "SmartInsight App (Apple Store)",
     "example": "Work Example",
     "email": "E-Mail",
-    "contactText": "Want to contact me? Just send me an E-Mail!",
+    "contactText": "Want to contact me?",
+    "contactText2": "Just send me an E-Mail!",
     "paragraph": {
         "first": "Hi! My name is Sean, welcome to my website!",
         "second": "I'm a full-stack developer based in Hamburg, who loves to learn new thing everyday and some people probably would call me a nerd. 🤓 ",

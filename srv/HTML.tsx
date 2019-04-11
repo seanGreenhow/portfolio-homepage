@@ -14,17 +14,55 @@ export default class HTML extends React.Component {
                 <link rel="stylesheet" href="bundle.css" />
                 <script src="bundle.js"></script>
                 <Noscript>
+                    {/** Replace with <link /> and a new css file. */}
                     <style>
-                        .chat {"{"}
+                        #resume #more {"{"}
+                        margin-bottom: 50px;
+                        {"}"}
+                        #resume #timeline {"{"}
+                        opacity: 1;
+                        {"}"}
+                        #resume #timeline .project:not(.active) .inner .extra {"{"}
+                        background-color: #7c0a04B0;
+                        {"}"}
+
+
+                        #resume #timeline #yearline .year {"{"}
+                        background-color: rgba(125, 125, 125, 0.5);
+                        {"}"}
+
+                        @media screen and (max-width: 700px) {"{"}
+                        #resume #timeline .project:not(.active) .inner .title {"{"}
+                        background-color: #7c0a04;
+                        {"}"}
+                        #resume #timeline .project:not(.active) .inner:before {"{"}
+                        border-color: transparent transparent transparent #7c0a04;
+                        {"}"}
+                        {"}"}
+
+                        #home .chat {"{"}
+                        margin-top: -33.333%;
+                        {"}"}
+
+
+                        #home .chat, #resume .chat {"{"}
                         position: relative;
                         {"}"}
                         .chat .message {"{"}
                         height: auto;
                         opacity: 1;
                         {"}"}
+                        .spacer {"{"}
+                        display: none;
+                        {"}"}
+
                         .simplebar-content {"{"}
                         overflow-y: auto;
                         overflow-x: hidden;
+                        {"}"}
+
+                        #background {"{"}
+                        opacity: 0.85;
                         {"}"}
                     </style>
                 </Noscript>
