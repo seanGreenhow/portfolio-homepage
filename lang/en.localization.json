@@ -1,7 +1,9 @@
 {
     "jobtitle": "Full-Stack Developer",
     "projects": "Resume",
+    "projectsIntro": "Resume & <br/>Work Samples",
     "contact": "Contact",
+    "contactIntro": "Contact",
     "home": "Home",
     "website": "Website",
     "FOwebsite": "FO-Fonds Website",
@@ -9,13 +11,14 @@
     "eOfficeWebsite": "IT-Devision Website",
     "SIAppGooglePlay": "SmartInsight App (Google Play)",
     "SIAppAppleStore": "SmartInsight App (Apple Store)",
-    "example": "Work Example",
+    "example": "Work Sample",
     "email": "E-Mail",
-    "contactText": "Want to contact me?",
-    "contactText2": "Just send me an E-Mail!",
+    "GitHub": "GitHub",
+    "contactText": "You want to contact me?",
+    "contactText2": "Just send me an E-Mail here:",
     "paragraph": {
         "first": "Hi! My name is Sean, welcome to my website!",
-        "second": "I'm a full-stack developer based in Hamburg, who loves to learn new thing everyday and some people probably would call me a nerd. 🤓 ",
+        "second": "I'm a full-stack developer based in Hamburg, who loves to learn new things every day and some people would probably call me a nerd. 🤓 ",
         "third": "I enjoy most genres of music and like to play video games in my spare time. But enough blabbering...",
         "fourth": "You can check out all the things i made and worked on here: ",
         "fifth": "Or you can get in touch with me here: "
@@ -45,12 +48,12 @@
             "description": "at Honestas Finanzmanagement GmbH.",
             "duties": {
                 "0": "Improving the company websites.",
-                "1": "Developing the Honestas SmartInsight Webapplikation and Dataserver.",
+                "1": "Developing the Honestas SmartInsight Webapplication and Dataserver.",
                 "2": "PDF generation for custom investment analyses on the FO-Fonds website."
             }
         },
         "topConcepts": {
-            "title": "Full Time Job - Frontend & PHP Web Developer",
+            "title": "One-Year Full Time Contract - Frontend & PHP Web Developer",
             "description": "at topConcepts GmbH.",
             "duties": {
                 "0": "Improving and extending multiple webshops based on 'OXID eShop'."
@@ -64,8 +67,12 @@
                 "1": "Developing the Honestas SmartInsight App with 'React-Native' and extending the core server with microservices."
             }
         },
+        "ReactMultilayer": {
+            "title": "React Multilayer Project",
+            "description": ""
+        },
         "more": "... and more to come!",
-        "more2": "You got any questions or want me to work on one of your projects?",
-        "more3": "Just follow this link:"
+        "more2": "Do you have any questions or want me to work on one of your projects?",
+        "more3": "Just follow this link!"
     }
 }

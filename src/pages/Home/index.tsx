@@ -56,28 +56,28 @@ export default class Home extends React.Component {
 
     componentDidMount() {
         const controller = new ScrollMagic.Controller({ container: '.simplebar-content' });
-        new ScrollMagic.Scene({ duration: 1, offset: 1 })
+        new ScrollMagic.Scene({ duration: 1, offset: 50 })
             .on('leave', clearMessages(controller))
             .addTo(controller)
 
-        new ScrollMagic.Scene({ duration: 0, offset: 1 })
-            .on('enter', showMessage(controller, '#first'))
+        new ScrollMagic.Scene({ duration: 0, offset: 50 })
+            .on('enter', showMessage(controller, '#first', 0))
             .addTo(controller)
 
-        new ScrollMagic.Scene({ duration: 0, offset: 100 })
-            .on('enter', showMessage(controller, '#second'))
+        new ScrollMagic.Scene({ duration: 0, offset: 50 })
+            .on('enter', showMessage(controller, '#second', 1.5))
             .addTo(controller)
 
-        new ScrollMagic.Scene({ duration: 0, offset: 200 })
-            .on('enter', showMessage(controller, '#third'))
+        new ScrollMagic.Scene({ duration: 0, offset: 50 })
+            .on('enter', showMessage(controller, '#third', 3))
             .addTo(controller)
 
-        new ScrollMagic.Scene({ duration: 0, offset: 300 })
-            .on('enter', showMessage(controller, '#fourth'))
+        new ScrollMagic.Scene({ duration: 0, offset: 50 })
+            .on('enter', showMessage(controller, '#fourth', 4.5))
             .addTo(controller)
 
-        new ScrollMagic.Scene({ duration: 0, offset: 400 })
-            .on('enter', showMessage(controller, '#fifth'))
+        new ScrollMagic.Scene({ duration: 0, offset: 50 })
+            .on('enter', showMessage(controller, '#fifth', 6))
             .addTo(controller)
 
     }

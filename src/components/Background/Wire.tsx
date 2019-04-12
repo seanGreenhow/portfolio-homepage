@@ -8,15 +8,16 @@ export default class Wire extends React.Component<{
     fill?: string,
     stroke?: string,
     width?: number
-}, { id: string }> {
-    state = {
-        id: `wire_${uuid.v4()}`
-    }
+}, { id: string, electrons: React.ReactElement[] }> {
     static defaultProps = {
         electrons: 1,
         fill: 'none',
         stroke: 'none',
         width: 1
+    }
+    state = {
+        id: undefined,
+        electrons: []
     }
 
     render() {
@@ -27,8 +28,15 @@ export default class Wire extends React.Component<{
                 strokeWidth={this.props.width}
                 d={this.props.path}
             />
-
-            {[...Array(this.props.electrons)].map((_, id) => <Electron key={id} wireID={this.state.id} size={this.props.width} />)}
+            {this.state.electrons}
         </g>)
+    }
+
+    componentDidMount() {
+        let id = `wire_${uuid.v4()}`
+        this.setState({
+            id: id,
+            electrons: [...Array(this.props.electrons)].map((_, index) => <Electron key={index} wireID={id} size={this.props.width} />)
+        })
     }
 }

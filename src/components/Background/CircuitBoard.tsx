@@ -8,6 +8,17 @@ export default class CircuitBoard extends React.Component<{ width: number, heigh
     private readonly saferoomHeight: number = 100
     private readonly saferoomWidth: number = 300
 
+    getElectronCount() {
+        let rand = Math.ceil(Math.random() * 100)
+
+        switch (true) {
+            case (rand > 98): return 2
+            case (rand > 75): return 1
+
+            default: return 0;
+        }
+    }
+
     render() {
         const width = this.props.width
         const height = this.props.height
@@ -582,9 +593,5 @@ export default class CircuitBoard extends React.Component<{ width: number, heigh
                 <Chip x={width - 300} y={height - 100} width={150} height={50} />
             </svg>
         )
-    }
-
-    getElectronCount() {
-        return 0
     }
 }

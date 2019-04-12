@@ -58,6 +58,10 @@ ul {
   }
 }
 
+.simplebar-scrollbar:before {
+  background: $accent-color;
+}
+
 @media screen and (max-width: 400px) {
   body {
     font-size: 16px;

@@ -40,6 +40,8 @@ export default class Projects extends React.Component {
             ]
         ))
 
+
+
         projects.push(new Project(new Date(2014, 1), new Date(2015, 2), "Latupo", "right",
             ["0"]
         ))
@@ -50,6 +52,14 @@ export default class Projects extends React.Component {
                 ['https://www2.honestas-finanzmanagement.de', 'website'],
                 ['https://www2.honestas-family-office.de', 'FamilyOfficeWebsite'],
                 ['https://mein.fo-vermoegensverwalterfonds.de', 'FOwebsite']
+            ]
+        ))
+
+        projects.push(new Project(new Date(2018, 10), new Date(2019, 3), "ReactMultilayer", "right",
+            [],
+            [
+                ['https://github.com/seanGreenhow/react-multilayer', 'GitHub'],
+                ['https://github.com/seanGreenhow/react-multilayer-contextmenu', 'GitHub']
             ]
         ))
 
@@ -71,10 +81,7 @@ export default class Projects extends React.Component {
         return (
             <Content>
                 <Intro>
-                    <h1>
-                        Résumé &amp; <br />
-                        Work Samples.
-                    </h1>
+                    <h1><Translate id="projectsIntro" options={{ renderInnerHtml: true } as any} /></h1>
                 </Intro>
                 <div id="resume">
                     <div id="timeline">
@@ -138,7 +145,7 @@ export default class Projects extends React.Component {
             .addTo(controller)
 
         new ScrollMagic.Scene({ duration: 0, triggerElement: '#project-message-trigger', triggerHook: "onEnter" })
-            .on('enter', showMessage(controller, '#project-message2', 0.5))
+            .on('enter', showMessage(controller, '#project-message2', 1.5))
             .addTo(controller)
     }
 }

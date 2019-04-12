@@ -4,7 +4,7 @@ import variables from "../../variables"
 import uuid = require("uuid")
 
 export default class Chip extends React.Component<{ x: number, y: number, width: number, height: number }, { id: string }> {
-    state = { id: `chip_${uuid.v4()}` }
+    state = { id: undefined }
     private readonly nodeSize: number = 10
     private readonly nodePadding: number = 8
     private readonly nodeGutter: number = 8
@@ -96,5 +96,11 @@ export default class Chip extends React.Component<{ x: number, y: number, width:
                 {nodes}
             </g>
         )
+    }
+
+    componentDidMount() {
+        this.setState({
+            id: `chip_${uuid.v4()}`
+        })
     }
 }

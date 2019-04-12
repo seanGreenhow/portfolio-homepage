@@ -6,7 +6,7 @@ const Noscript = props => {
     return <noscript dangerouslySetInnerHTML={{ __html: staticMarkup }} />;
 };
 
-export default class HTML extends React.Component {
+export default class HTML extends React.Component<{ defaultLanguage: string }> {
     render() {
         return <html lang="en">
             <head>
@@ -14,6 +14,7 @@ export default class HTML extends React.Component {
                 <title>Sean Greenhow - Full Stack Web!</title>
                 <link rel="stylesheet" href="bundle.css" />
                 <script src="bundle.js"></script>
+                <script dangerouslySetInnerHTML={{ __html: `var defaultLanguage = "${this.props.defaultLanguage}"` }}></script>
                 <Noscript>
                     {/** Replace with <link /> and a new css file. */}
                     <style>

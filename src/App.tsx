@@ -1,50 +1,26 @@
 import * as React from "react"
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
-import { renderToStaticMarkup } from "react-dom/server"
+import { Route, Switch } from "react-router-dom"
+
 import Home from "./pages/Home"
 
 import Background from "./components/Background"
 import Projects from "./pages/Projects"
-import { withLocalize, LocalizeContextProps, LocalizeProvider } from "react-localize-redux"
-
-import * as en_translation from '../lang/en.localization.json'
-import * as de_translation from '../lang/en.localization.json'
 import Error404 from "./pages/Error/404";
 import Contact from "./pages/Contact";
 import './Chat.scss'
 
-class App extends React.Component<LocalizeContextProps> {
-
-    constructor(props) {
-        super(props)
-        this.props.addTranslationForLanguage(en_translation, 'en');
-        this.props.addTranslationForLanguage(de_translation, 'de');
-    }
-
+export default class App extends React.Component {
     render() {
-        return <LocalizeProvider initialize={{
-            languages: [
-                { name: "English", code: "en" },
-                { name: "German", code: "de" }
-            ],
-            translation: en_translation,
-            options: {
-                renderToStaticMarkup
-            }
-        }}>
-            <div className="page fill">
-                <Background />
-                <div className="content fill">
-                    <Switch>
-                        <Route path="/projects" component={() => <Projects />} />
-                        <Route path="/contact" component={() => <Contact />} />
-                        <Route path="/" exact component={() => <Home />} />
-                        <Route component={() => <Error404 />} />
-                    </Switch>
-                </div>
+        return <div className="page fill">
+            <Background />
+            <div className="content fill">
+                <Switch>
+                    <Route path="/projects" component={() => <Projects />} />
+                    <Route path="/contact" component={() => <Contact />} />
+                    <Route path="/" exact component={() => <Home />} />
+                    <Route component={() => <Error404 />} />
+                </Switch>
             </div>
-        </LocalizeProvider>
+        </div>
     }
 }
-
-export default withLocalize(App)

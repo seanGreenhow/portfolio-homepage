@@ -1,3 +1,78 @@
 {
-    "jobtitle": "Full-Stack Entwickler"
+    "jobtitle": "Full-Stack Entwickler",
+    "projects": "Lebenslauf",
+    "projectsIntro": "Lebenslauf & <br/>Arbeitsbeispiele",
+    "contact": "Kontakt",
+    "contactIntro": "Kontakt",
+    "home": "Start",
+    "website": "Webseite",
+    "FOwebsite": "FO-Fonds Webseite",
+    "FamilyOfficeWebsite": "Family Office Webseite",
+    "eOfficeWebsite": "IT-Devision Webseite",
+    "SIAppGooglePlay": "SmartInsight App (Google Play)",
+    "SIAppAppleStore": "SmartInsight App (Apple Store)",
+    "example": "Arbeitsbeispiel",
+    "email": "E-Mail",
+    "GitHub": "GitHub",
+    "contactText": "Du hast eine Idee die du teilen möchtest, ein Projekt oder eine Frage?",
+    "contactText2": "Schreib mir doch einfach eine E-Mail!",
+    "paragraph": {
+        "first": "Hi! Mein Name ist Sean und willkommen auf meiner Webseite!",
+        "second": "Ich bin ein Full Stack Entwickler aus Hamburg, der es liebt ständig neue Dinge zu lernen. Manche würden mich wohl auch als Nerd bezeichnen. 🤓",
+        "third": "Wenn ich nicht gerade neue Dinge ausprobiere verbringe ich meine Freizeit am liebsten mit Musik aller Art und Videospielen. Aber genug geschnackt...",
+        "fourth": "Du kannst alles an dem ich öffentlich gearbeitet habe hier sehen: ",
+        "fifth": "Oder du kannst dich hier bei mir melden: "
+    },
+    "project": {
+        "Abi": {
+            "title": "Abitur",
+            "description": "am Gymnasium Christianeum, Hamburg."
+        },
+        "TUHH": {
+            "title": "Bachelor Kurs - Computational Informatics",
+            "description": "an der Technischen Universität Hamburg-Harburg. (nicht abgeschlossen)"
+        },
+        "HAW": {
+            "title": "Bachelor Kurs - Angewandte Informatik",
+            "description": "an der Hochschule für Angewandte Wissenschaften Hamburg. (nicht abgeschlossen)"
+        },
+        "Latupo": {
+            "title": "Werkstudent - Java Backend Entwickler",
+            "description": "at Latupo GmbH.",
+            "duties": {
+                "0": "Automatisierung verschiedener e-Commerce Prozesse."
+            }
+        },
+        "HonestasStudent": {
+            "title": "Werkstudent - Frontend Entwickler",
+            "description": "bei der Honestas Finanzmanagement GmbH.",
+            "duties": {
+                "0": "Verbesserung der Firmenwebseiten.",
+                "1": "Entwicklung einer Webanwendung zur Generierung von PDF-Analysen für individuelle Fondsinvestments.",
+                "2": "Mitentwicklung der Honestas SmartInsight Webapplikation and dazugehöriger Servergrundlage."
+            }
+        },
+        "topConcepts": {
+            "title": "Befristeter Vollzeit Job - Frontend & PHP Webentwickler",
+            "description": "bei der topConcepts GmbH.",
+            "duties": {
+                "0": "Verbesserungen und Implementierung verschiedener 'OXID eShop'-Systeme."
+            }
+        },
+        "Honestas": {
+            "title": "Vollzeit Job - Leiter IT & Full Stack Developer",
+            "description": "at Honestas Finanzmanagement GmbH. ",
+            "duties": {
+                "0": "Automatisierung aller Datenpflege Prozesse für die FO-Fonds Webseite sowie der dazugehörigen Investmentanalysen-Generierung.",
+                "1": "Entwicklung der Honestas SmartInsight Mobilen App auf Basis von 'React-Native' und notwendigen Erweiterungen des Hauptsystems."
+            }
+        },
+        "ReactMultilayer": {
+            "title": "React Multilayer Project",
+            "description": ""
+        },
+        "more": "... und mehr wird folgen!",
+        "more2": "Hast du Fragen zu einem der Projekte oder ein eigenes Projekt an dem ich mitarbeiten könnte?",
+        "more3": "Folge einfach diesem Link!"
+    }
 }

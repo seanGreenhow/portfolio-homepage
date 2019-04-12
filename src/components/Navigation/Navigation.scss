@@ -1,15 +1,25 @@
 @import '../../variables';
 
-nav {
+#navigation {
     display: flex;
-    width: 100%;
-    height: 50px;
     background-image: linear-gradient(to bottom right, $header-gradient-start, $header-gradient-end);
-    justify-content: center;
     box-shadow: #000000 0 0 5px 0;
     z-index: 1;
+    height: 50px;
 
-    a {
+    .left,
+    .right {
+        width: 70px;
+
+        button {
+            width: 70px;
+            border: none;
+            background-color: transparent;
+        }
+    }
+
+    a,
+    #languageSelection>button {
         height: 50px;
         text-align: center;
         line-height: 50px;
@@ -44,4 +54,42 @@ nav {
             }
         }
     }
+
+    nav {
+        display: flex;
+        flex: 1;
+        height: 50px;
+
+        justify-content: center;
+    }
+
+    #languageSelection {
+        position: relative;
+
+        .selector {
+            position: absolute;
+            top: 100%;
+            right: 0;
+
+            .language {
+                display: block;
+                width: auto;
+                height: 40px;
+                text-align: center;
+                line-height: 40px;
+                color: inherit;
+                text-decoration: none;
+                padding-left: 15px;
+                padding-right: 15px;
+                transition: background-color 0.3s ease-in-out;
+                background-color: $header-gradient-end;
+
+                &.active {
+                    color: $accent-color;
+                }
+            }
+        }
+    }
+
+
 }

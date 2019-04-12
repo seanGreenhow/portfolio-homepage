@@ -3,10 +3,10 @@ import uuid = require("uuid")
 import anime from 'animejs'
 
 export default class Electron extends React.Component<{ wireID: any, size: number }, { id: string }> {
+    animation: any
     state = {
         id: `electron_${uuid.v4()}`
     }
-    animation: any
 
     render() {
         return (
@@ -25,6 +25,7 @@ export default class Electron extends React.Component<{ wireID: any, size: numbe
         const delay = Math.random() * 20000
         const endDelay = Math.random() * 20000
 
+        
         const path = anime.path(`#${this.props.wireID}`)
 
         this.animation = anime({

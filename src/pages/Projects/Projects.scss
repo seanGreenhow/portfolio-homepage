@@ -45,7 +45,7 @@
             .inner {
                 &:before {
                     right: -10px;
-                    border-width: 35px 0 35px 10px;
+                    border-width: 20px 0 20px 10px;
                     border-color: transparent transparent transparent #7c0a04;
                 }
             }
@@ -57,7 +57,7 @@
             .inner {
                 &:before {
                     left: -10px;
-                    border-width: 35px 10px 35px 0;
+                    border-width: 20px 10px 20px 0;
                     border-color: transparent #7c0a04 transparent transparent;
                 }
             }
@@ -99,10 +99,11 @@
                     border-bottom-left-radius: 0;
                     border-bottom-right-radius: 0;
                     background-color: #7c0a04;
-                    height: 70px;
+                    height: 40px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    font-size: 16px;
                 }
 
                 .extra {
@@ -118,11 +119,11 @@
                         padding: 10px;
                     }
 
-                    .description {
+                    .description:not(:empty) {
                         margin-bottom: 7px;
                     }
 
-                    ul {
+                    ul:not(:empty) {
                         margin-bottom: 7px;
                     }
 
@@ -153,110 +154,112 @@
     @media screen and (max-width: 700px) {
         #timeline {
             .projectList.left {
-                .right {
-                    display: flex;
+                .project {
+                    max-height: 1000px;
+                    transition: max-height 0.5s ease-in-out;
+                    overflow: hidden;
+
+                    &.right {
+                        display: flex;
+                    }
+
+                    .inner {
+                        .title {
+                            transition: background-color 0.5s ease-in-out;
+                            height: 60px;
+                        }
+
+                        .extra {
+                            transition: background-color 0.5s ease-in-out;
+                            background-color: #7c0a04AA;
+                            border-bottom-right-radius: 0;
+
+                            .extra-inner {
+                                height: 100%;
+                                padding: 7px;
+                                padding-top: 0;
+                            }
+
+                            .extra-mobile-background {
+                                height: 100%;
+                                padding: 7px;
+                                background-color: #00000030;
+                            }
+                        }
+
+                        &:before {
+                            transition: all 0.5s ease-in-out;
+                            border-width: 30px 0 30px 10px;
+                        }
+
+                        &:after {
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            bottom: 0;
+                            width: 0;
+                            height: 0;
+                            border-style: solid;
+                            transition: all 0.5s ease-in-out;
+                            right: -10px;
+                            border-width: 0 10px 0 0;
+                            border-color: transparent transparent #7c0a04 transparent;
+                        }
+                    }
+
+
+                    &:not(.active) {
+                        max-height: 62px;
+
+                        .inner {
+                            &:before {
+                                border-color: transparent transparent transparent #7c0a04AA;
+                            }
+
+                            .title {
+                                background-color: #7c0a04AA;
+                                border-bottom-left-radius: 2px;
+                                border-bottom-right-radius: 2px;
+                            }
+                        }
+
+                    }
+
+                    &.active {
+                        z-index: 5;
+
+                        .inner {
+                            .title {
+                                border-top-right-radius: 0;
+                            }
+
+                            .extra {
+                                background-color: #7c0a04;
+                            }
+
+                            &:before {
+                                right: -20px;
+                                border-width: 35px 20px 0 0;
+                                border-color: #7c0a04 transparent transparent transparent;
+                            }
+
+                            &:after {
+                                right: -20px;
+                                border-width: 0 20px 35px 0;
+                                border-color: transparent transparent #7c0a04 transparent;
+                            }
+
+                        }
+                    }
+
+                    &.closing {
+                        z-index: 3;
+                    }
                 }
             }
 
             .projectList.right {
                 display: none;
-            }
-
-            .project {
-                max-height: 1000px;
-                transition: max-height 0.5s ease-in-out;
-                overflow: hidden;
-
-                .inner {
-                    .title {
-                        transition: background-color 0.5s ease-in-out;
-                    }
-
-                    .extra {
-                        transition: background-color 0.5s ease-in-out;
-                        background-color: #7c0a04AA;
-                        border-bottom-right-radius: 0;
-
-                        .extra-inner {
-                            height: 100%;
-                            padding: 20px;
-                            padding-top: 0;
-                        }
-
-                        .extra-mobile-background {
-                            height: 100%;
-                            padding: 10px;
-                            background-color: #00000030;
-                        }
-                    }
-
-                    &:before {
-                        transition: all 0.5s ease-in-out;
-                    }
-
-                    &:after {
-                        content: '';
-                        display: block;
-                        position: absolute;
-                        bottom: 0;
-                        width: 0;
-                        height: 0;
-                        border-style: solid;
-                        transition: all 0.5s ease-in-out;
-                        right: -10px;
-                        border-width: 0 10px 0 0;
-                        border-color: transparent transparent #7c0a04 transparent;
-                    }
-                }
-
-
-                &:not(.active) {
-                    max-height: 72px;
-
-                    .inner {
-                        &:before {
-                            border-color: transparent transparent transparent #7c0a04AA;
-                        }
-
-                        .title {
-                            background-color: #7c0a04AA;
-                            border-bottom-left-radius: 2px;
-                            border-bottom-right-radius: 2px;
-                        }
-                    }
-
-                }
-
-                &.active {
-                    z-index: 5;
-
-                    .inner {
-                        .title {
-                            border-top-right-radius: 0;
-                        }
-
-                        .extra {
-                            background-color: #7c0a04;
-                        }
-
-                        &:before {
-                            right: -20px;
-                            border-width: 35px 20px 0 0;
-                            border-color: #7c0a04 transparent transparent transparent;
-                        }
-
-                        &:after {
-                            right: -20px;
-                            border-width: 0 20px 35px 0;
-                            border-color: transparent transparent #7c0a04 transparent;
-                        }
-
-                    }
-                }
-
-                &.closing {
-                    z-index: 3;
-                }
             }
 
             #more {
