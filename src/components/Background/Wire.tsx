@@ -14,7 +14,7 @@ export default class Wire extends React.Component<{
         fill: 'none',
         stroke: 'none',
         width: 1,
-        animated: true
+        animated: false
     }
     state = { id: undefined }
     animation: any
