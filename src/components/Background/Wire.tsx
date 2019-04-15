@@ -30,7 +30,6 @@ export default class Wire extends React.Component<{
     }
 
     private spawnAnimation() {
-        console.log('animation spawned')
         this.animation = anime({
             targets: `#${this.state.id}`,
             stroke: [this.props.stroke, '#AA0000'],
@@ -55,7 +54,6 @@ export default class Wire extends React.Component<{
     removeAnimation() {
         if (this.animation) this.animation.pause()
         this.animation = null
-        console.log('animation removed')
     }
     componentDidMount() {
         if (this.props.animated) this.createAnimation()

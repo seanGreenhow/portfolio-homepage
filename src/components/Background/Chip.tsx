@@ -91,8 +91,11 @@ export default class Chip extends React.Component<{ x: number, y: number, width:
 
         return (
             <g transform={`translate(${this.props.x} ${this.props.y})`}>
-                <rect id={this.state.id} fill={variables.chipColor} filter="url(#chipshadow)"
-                    rx="2" ry="2" x={0} y={0} width={this.props.width} height={this.props.height} />
+                <rect id={this.state.id} fill={variables.chipColor}
+                    rx="2" ry="2"
+                    x={0} y={0}
+                    width={this.props.width} height={this.props.height}
+                />
                 {nodes}
             </g>
         )

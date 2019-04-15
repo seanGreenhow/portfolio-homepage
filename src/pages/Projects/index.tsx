@@ -8,6 +8,7 @@ import { TweenMax } from 'gsap'
 import { FaExternalLinkAlt } from 'react-icons/fa'
 import { Link } from "react-router-dom";
 import { showMessage, clearMessages } from "../../Chat";
+import Scrollbar from 'react-custom-scrollbars'
 
 const monthScaling = 20
 
@@ -90,11 +91,9 @@ export default class Projects extends React.Component {
                                 height: getMonthDifference(minDate, secondYear) * monthScaling
                             }}>{minDate.getFullYear()}</div>
 
-
                             {years.map((year, index) => <div key={index} className="year" style={{
                                 height: 12 * monthScaling
                             }}>{year}</div>)}
-
 
                             <div className="year" style={{
                                 height: getMonthDifference(lastYear, maxDate) * monthScaling
@@ -178,11 +177,13 @@ class ProjectComponent extends React.Component<{ project: Project, monthOffset: 
                 <div className="extra">
                     <div className="extra-inner">
                         <div className="extra-mobile-background">
-                            <div className="description"><Translate id={`project.${this.props.project.id}.description`} /></div>
-                            <ul>
-                                {this.props.project.dutieIDs && this.props.project.dutieIDs.map(id => <li key={id}><Translate id={`project.${this.props.project.id}.duties.${id}`} /></li>)}
-                            </ul>
-                            {this.props.project.links && this.props.project.links.map((link, index) => <a key={index} href={link[0]}><FaExternalLinkAlt size={10} /> <Translate id={link[1]} /></a>)}
+                            <Scrollbar style={{ height: '100%' }}>
+                                <div className="description"><Translate id={`project.${this.props.project.id}.description`} /></div>
+                                <ul>
+                                    {this.props.project.dutieIDs && this.props.project.dutieIDs.map(id => <li key={id}><Translate id={`project.${this.props.project.id}.duties.${id}`} /></li>)}
+                                </ul>
+                                {this.props.project.links && this.props.project.links.map((link, index) => <a key={index} href={link[0]}><FaExternalLinkAlt size={10} /> <Translate id={link[1]} /></a>)}
+                            </Scrollbar>
                         </div>
                     </div>
                 </div>
