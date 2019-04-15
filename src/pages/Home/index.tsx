@@ -14,7 +14,7 @@ export default class Home extends React.Component {
                 <Intro>
                     <h1>
                         Sean Greenhow <br />
-                        <Translate id="jobtitle" />.
+                        <Translate id="jobtitle" />
                     </h1>
                 </Intro>
                 <div id="home">
