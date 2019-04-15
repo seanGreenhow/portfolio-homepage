@@ -11,6 +11,7 @@ import { LocalizeProvider } from 'react-localize-redux'
 import { renderToStaticMarkup } from "react-dom/server"
 import * as en_translation from '../lang/en.localization.json'
 import * as de_translation from '../lang/de.localization.json'
+import * as config from '../config.json'
 
 const server = express()
 const http = HTTP.createServer(server)
@@ -68,6 +69,6 @@ server.get('/*', (req: express.Request, res: express.Response) => {
 //
 
 
-http.listen(8080, () => {
+http.listen(config.port, config.host, () => {
     console.log('Server started')
 })
