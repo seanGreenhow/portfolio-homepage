@@ -11,7 +11,9 @@
   overflow: hidden;
   margin: 0 auto;
 
-  #circuit-board {
+  #circuit-board,
+  #chip-set,
+  #electron-wrapper {
     position: absolute;
     margin: auto;
     display: block;
@@ -20,4 +22,13 @@
     left: 50%;
     transform: translate(-50%, 0);
   }
+
+  #electron-wrapper {
+    .electron {
+      margin: -1px;
+      background-color: $highlight-color;
+      box-shadow: 0 0 5px 1px $highlight-color;
+    }
+  }
+
 }

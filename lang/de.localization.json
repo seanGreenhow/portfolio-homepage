@@ -19,7 +19,7 @@
     "paragraph": {
         "first": "Hi! Mein Name ist Sean und willkommen auf meiner Webseite!",
         "second": "Ich bin ein Full Stack Entwickler aus Hamburg, der es liebt ständig neue Dinge zu lernen. Manche würden mich wohl auch als Nerd bezeichnen. 🤓",
-        "third": "Wenn ich nicht gerade neue Dinge ausprobiere verbringe ich meine Freizeit am liebsten mit Musik aller Art und Videospielen. Aber genug geschnackt...",
+        "third": "Wenn ich nicht gerade neue Dinge ausprobiere, verbringe ich meine Freizeit am liebsten mit Musik aller Art und Videospielen. Aber genug geschnackt...",
         "fourth": "Du kannst alles an dem ich öffentlich gearbeitet habe hier sehen: ",
         "fifth": "Oder du kannst dich hier bei mir melden: "
     },
@@ -38,7 +38,7 @@
         },
         "Latupo": {
             "title": "Werkstudent - Java Backend Entwickler",
-            "description": "at Latupo GmbH.",
+            "description": "bei der Latupo GmbH.",
             "duties": {
                 "0": "Automatisierung verschiedener e-Commerce Prozesse."
             }
@@ -61,7 +61,7 @@
         },
         "Honestas": {
             "title": "Vollzeit Job - Leiter IT & Full Stack Developer",
-            "description": "at Honestas Finanzmanagement GmbH. ",
+            "description": "bei der Honestas Finanzmanagement GmbH. ",
             "duties": {
                 "0": "Automatisierung aller Datenpflege Prozesse für die FO-Fonds Webseite sowie der dazugehörigen Investmentanalysen-Generierung.",
                 "1": "Entwicklung der Honestas SmartInsight Mobilen App auf Basis von 'React-Native' und notwendigen Erweiterungen des Hauptsystems."

@@ -15,11 +15,14 @@ export default class Contact extends React.Component {
                     <h1><Translate id="contactIntro" /></h1>
                 </Intro>
                 <div id="contact">
-                    <div className="spacer" />
                     <div className="chat">
-                        <div id="contact-message" className="message">
+                        <div id="contact-message1" className="message">
                             <div className="text">
-                                <Translate id="contactText" /> <br />
+                                <Translate id="contactText" />
+                            </div>
+                        </div>
+                        <div id="contact-message2" className="message">
+                            <div className="text">
                                 <Translate id="contactText2" />
 
                                 <a href="mailto:sean@greenhow.dev">
@@ -28,6 +31,7 @@ export default class Contact extends React.Component {
                             </div>
                         </div>
                     </div>
+                    <div className="spacer" />
                 </div>
             </Content >
         )
@@ -40,7 +44,11 @@ export default class Contact extends React.Component {
             .addTo(controller)
 
         new ScrollMagic.Scene({ duration: 0, offset: 50 })
-            .on('enter', showMessage(controller, '#contact-message'))
+            .on('enter', showMessage(controller, '#contact-message1'))
+            .addTo(controller)
+
+        new ScrollMagic.Scene({ duration: 0, offset: 50 })
+            .on('enter', showMessage(controller, '#contact-message2', 1.5))
             .addTo(controller)
     }
 }
