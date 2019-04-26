@@ -74,5 +74,62 @@
         "more": "... und mehr wird folgen!",
         "more2": "Hast du Fragen zu einem der Projekte oder ein eigenes Projekt an dem ich mitarbeiten könnte?",
         "more3": "Folge einfach diesem Link!"
+    },
+
+
+    "mobile-hint": "Du kannst die Titel anklicken um mehr Infos anzuzeigen!",
+
+
+    "skills": "Skills",
+    "skill": {
+        "java": {
+            "title": "Java",
+            "subskills": {
+                "0": "Java EE",
+                "1": "Maven",
+                "2": "Spring"
+            }
+        },
+        "javascript": {
+            "title": "Javascript",
+            "subskills": {
+                "0": "Babel",
+                "1": "Typescript",
+                "2": "React",
+                "3": "React Native",
+                "4": "npm & yarn",
+                "5": "Node",
+                "6": "Express"
+
+            }
+        },
+        "html": {
+            "title": "HTML"
+        },
+        "styles": {
+            "title": "Web Styling",
+            "subskills": {
+                "1": "CSS",
+                "2": "SCSS"
+            }
+        },
+        "development": {
+            "title": "Development Skills",
+            "subskills": {
+                "0": "Version Control (mainly Git)",
+                "1": "Test Driven Development"
+            }
+        },
+        "devops": {
+            "title": "DevOps",
+            "subskills": {
+                "0": "Linux (mainly Ubuntu and Debian)",
+                "1": "Proxmox Virtual Environment",
+                "2": "Nginx Reverse Proxy",
+                "3": "Apache",
+                "4": "Docker",
+                "5": "Automization"
+            }
+        }
     }
 }

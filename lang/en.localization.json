@@ -74,5 +74,8 @@
         "more": "... and more to come!",
         "more2": "Do you have any questions or want me to work on one of your projects?",
         "more3": "Just follow this link!"
-    }
+    },
+
+    "mobile-hint": "Tap on any title to see more infos!",
+    "skills": "Skills"
 }

@@ -6,8 +6,8 @@ import { Translate } from "react-localize-redux"
 import * as ScrollMagic from 'scrollmagic-with-ssr'
 import { TweenMax } from 'gsap'
 import { FaExternalLinkAlt } from 'react-icons/fa'
-import { Link } from "react-router-dom";
-import { showMessage, clearMessages } from "../../Chat";
+import { Link } from "react-router-dom"
+import { showMessage, clearMessages } from "../../Chat"
 import Scrollbar from 'react-custom-scrollbars'
 
 const monthScaling = 20
@@ -85,6 +85,13 @@ export default class Projects extends React.Component {
                     <h1><Translate id="projectsIntro" options={{ renderInnerHtml: true } as any} /></h1>
                 </Intro>
                 <div id="resume">
+                    <div id="mobile-hint" className="chat" style={{ position: 'relative' }}>
+                        <div className="message" style={{ opacity: 1, height: 'auto' }}>
+                            <div className="text">
+                                <Translate id="mobile-hint"/>
+                            </div>
+                        </div>
+                    </div>
                     <div id="timeline">
                         <div id="yearline" style={{ height }}>
                             <div className="year" style={{
@@ -133,7 +140,7 @@ export default class Projects extends React.Component {
         const controller = new ScrollMagic.Controller({ container: '.simplebar-content' });
         new ScrollMagic.Scene({ duration: 200, offset: 1 })
             .addTo(controller)
-            .setTween(TweenMax.to("#timeline", 0.25, { opacity: 1 }))
+            .setTween(TweenMax.to("#resume", 0.25, { opacity: 1 }))
 
         new ScrollMagic.Scene({ duration: 0, triggerElement: '#project-message-trigger', triggerHook: "onEnter" })
             .on('leave', clearMessages(controller))
@@ -180,7 +187,7 @@ class ProjectComponent extends React.Component<{ project: Project, monthOffset: 
                             <Scrollbar style={{ height: '100%' }}>
                                 <div className="description"><Translate id={`project.${this.props.project.id}.description`} /></div>
                                 <ul>
-                                    {this.props.project.dutieIDs && this.props.project.dutieIDs.map(id => <li key={id}><Translate id={`project.${this.props.project.id}.duties.${id}`} /></li>)}
+                                    {this.props.project.dutyIDs && this.props.project.dutyIDs.map(id => <li key={id}><Translate id={`project.${this.props.project.id}.duties.${id}`} /></li>)}
                                 </ul>
                                 {this.props.project.links && this.props.project.links.map((link, index) => <a key={index} href={link[0]}><FaExternalLinkAlt size={10} /> <Translate id={link[1]} /></a>)}
                             </Scrollbar>
@@ -198,7 +205,7 @@ class Project {
         public end: Date,
         public id: string,
         public position: "left" | "right",
-        public dutieIDs?: string[],
+        public dutyIDs?: string[],
         public links?: [string, string][]
     ) { }
 

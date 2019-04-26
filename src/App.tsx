@@ -8,6 +8,7 @@ import Projects from "./pages/Projects"
 import Error404 from "./pages/Error/404";
 import Contact from "./pages/Contact";
 import './Chat.scss'
+import Skills from "./pages/Skills";
 
 export default class App extends React.Component {
     render() {
@@ -17,6 +18,7 @@ export default class App extends React.Component {
                 <Switch>
                     <Route path="/projects" component={() => <Projects />} />
                     <Route path="/contact" component={() => <Contact />} />
+                    <Route path="/skills" component={() => <Skills />} />
                     <Route path="/" exact component={() => <Home />} />
                     <Route component={() => <Error404 />} />
                 </Switch>
