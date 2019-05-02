@@ -43,6 +43,12 @@ export default class Home extends React.Component {
                         <div id="fifth" className="message">
                             <div className="text">
                                 <Translate id="paragraph.fifth" />
+                                <Link to="/skills"><Translate id="skills" /></Link>
+                            </div>
+                        </div>
+                        <div id="sixth" className="message">
+                            <div className="text">
+                                <Translate id="paragraph.sixth" />
                                 <Link to="/contact"><Translate id="contact" /></Link>
                             </div>
                         </div>
@@ -78,6 +84,10 @@ export default class Home extends React.Component {
 
         new ScrollMagic.Scene({ duration: 0, offset: 50 })
             .on('enter', showMessage(controller, '#fifth', 6))
+            .addTo(controller)
+
+            new ScrollMagic.Scene({ duration: 0, offset: 50 })
+            .on('enter', showMessage(controller, '#sixth', 7.5))
             .addTo(controller)
 
     }

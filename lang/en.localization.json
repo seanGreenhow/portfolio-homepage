@@ -21,7 +21,8 @@
         "second": "I'm a full-stack developer based in Hamburg, who loves to learn new things every day and some people would probably call me a nerd. 🤓 ",
         "third": "I enjoy most genres of music and like to play video games in my spare time. But enough blabbering...",
         "fourth": "You can check out all the things i made and worked on here: ",
-        "fifth": "Or you can get in touch with me here: "
+        "fifth": "Or take a lok at all the things i learned from that here: ",
+        "sixth": "Or you can get in touch with me here: "
     },
     "project": {
         "Abi": {
@@ -69,13 +70,111 @@
         },
         "ReactMultilayer": {
             "title": "React Multilayer Project",
-            "description": ""
+            "description": "A small hobby project where i tried to make html multilayer compatible. Unfortunatly i met a deadend in react, which is why this project is on hold."
         },
         "more": "... and more to come!",
-        "more2": "Do you have any questions or want me to work on one of your projects?",
-        "more3": "Just follow this link!"
+        "more2": "Check out what i learned from all this here: ",
+        "more3": "Or do you have any questions or want me to work on one of your projects?",
+        "more4": "Then just follow this link:"
     },
 
     "mobile-hint": "Tap on any title to see more infos!",
-    "skills": "Skills"
+    "skills": "Skills",
+    "skill": {
+        "chat1": "Interested what i learned in the past?",
+        "chat2": "Then take a look at these skills i acquired over the years!",
+        "chat3": "If you are looking to hire me or have a recommendation what framework or tool i should try out, just head over to this link:",
+        "backend": {
+            "title": "Backend Technologies",
+            "skill": {
+                "java": {
+                    "title": "Java",
+                    "skill": {
+                        "0": "Java EE",
+                        "1": "Maven",
+                        "2": "Spring"
+                    }
+                },
+                "node": {
+                    "title": "Node",
+                    "skill": {
+                        "0": "Typescript",
+                        "1": "React Server-Side Rendering",
+                        "2": "Node",
+                        "3": "Express"
+                    }
+                },
+                "scripting": {
+                    "title": "Scripting",
+                    "skill": {
+                        "0": "Windows",
+                        "1": "Bash / Unix"
+                    }
+                }
+            }
+        },
+        "frontend": {
+            "title": "Frontend Technologies",
+            "skill": {
+                "javascript": {
+                    "title": "Javascript",
+                    "skill": {
+                        "0": "Babel",
+                        "1": "Typescript",
+                        "2": "React",
+                        "3": "React Native",
+                        "4": "npm & yarn"
+                    }
+                },
+                "html": {
+                    "title": "HTML"
+                },
+                "styles": {
+                    "title": "Web Styling",
+                    "skill": {
+                        "0": "CSS",
+                        "1": "SCSS"
+                    }
+                }
+            }
+        },
+        "development": {
+            "title": "Development",
+            "skill": {
+                "0": "Project Management",
+                "1": "Version Control (mainly Git)",
+                "2": "Test Driven Development",
+                "3": "IDEs (mainly Visual Studio Code)",
+                "devops": {
+                    "title": "DevOps & System Administration",
+                    "skill": {
+                        "0": "Windows",
+                        "1": "Linux (mainly Ubuntu and Debian)",
+                        "2": "Proxmox Virtual Environment",
+                        "3": "Nginx Reverse Proxy",
+                        "4": "FortiGate - Firewall & Routing",
+                        "5": "Apache",
+                        "6": "Build & Deploy Automization",
+                        "7": "Docker"
+                    }
+                }
+            }
+        },
+        "other": {
+            "title": "Utility",
+            "skill": {
+                "humor": {
+                    "title": "Humor",
+                    "skill": {
+                        "0": "Dark Humor",
+                        "1": "British Humor",
+                        "2": "Anti-Jokes",
+                        "3": "Sarcasm"
+                    }
+                },
+                "gamesystemdev": "Game System Development (Hobby)",
+                "roleplaying": "Roleplaying and Pen&Paper"
+            }
+        }
+    }
 }

@@ -1,3 +1,116 @@
+.spacer {
+    height: 50px;
+}
+
 #skills {
-    
+    opacity: 0;
+    margin-bottom: 200px;
+
+    @media screen and (max-width: 700px) {
+        margin-bottom: 100px;
+    }
+
+    #skilllist {
+        position: relative;
+        display: flex;
+        max-width: 1200px;
+        margin: auto;
+        left: 0;
+        right: 0;
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .category {
+
+            @media screen and (max-width: 700px) {
+                margin-bottom: 100px;
+            }
+
+            padding: 5px;
+            min-width: 300px;
+            flex: 1;
+
+            &>.skill {
+                padding: 4px;
+                border: 1px solid #66666699;
+                border-radius: 3px;
+
+                &>.title {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 60px;
+                    border-bottom: 1px solid #999999;
+                    margin-left: 5px;
+                    margin-right: 5px;
+                }
+
+                &>.subskills {
+                    padding: 5px;
+
+                    .skill {
+                        margin-top: 20px;
+                        margin-bottom: 20px;
+
+                        .title {
+                            padding: 5px;
+                            border: 1px solid #999999;
+                            border-radius: 3px;
+                            position: relative;
+
+                            &:before {
+                                content: "";
+                                position: absolute;
+                                top: 0;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                                display: block;
+                                background: #33333366;
+                                z-index: -1;
+                            }
+                        }
+
+                        .subskills {
+                            position: relative;
+
+
+
+                            .skill {
+                                position: relative;
+                                margin-left: 50px;
+
+                                &:before {
+                                    position: relative;
+                                    top: 20px;
+                                    left: -25px;
+                                    content: "";
+                                    display: block;
+                                    border-top: 1px solid #999999;
+                                    width: 25px;
+                                }
+
+                                &:after {
+                                    position: absolute;
+                                    top: -40px;
+                                    left: -25px;
+                                    content: "";
+                                    display: block;
+                                    border-left: 1px solid #999999;
+                                    height: calc(100% + 22px);
+                                }
+
+                                &:first-child {
+                                    &:after {
+                                        top: -20px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

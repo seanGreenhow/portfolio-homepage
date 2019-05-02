@@ -18,7 +18,8 @@ class LanguageSelector extends React.Component<LocalizeContextProps, { open: boo
                             return (
                                 <button type="button" key={lang.code}
                                     className={`language ${this.props.activeLanguage.code == lang.code ? "active" : ""}`}
-                                    onClick={() => {
+                                    onClick={(e) => {
+                                        e.preventDefault()
                                         this.props.setActiveLanguage(lang.code)
                                         this.setState({ open: false })
                                     }}

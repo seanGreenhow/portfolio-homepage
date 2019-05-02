@@ -20,8 +20,9 @@
         "first": "Hi! Mein Name ist Sean und willkommen auf meiner Webseite!",
         "second": "Ich bin ein Full Stack Entwickler aus Hamburg, der es liebt ständig neue Dinge zu lernen. Manche würden mich wohl auch als Nerd bezeichnen. 🤓",
         "third": "Wenn ich nicht gerade neue Dinge ausprobiere, verbringe ich meine Freizeit am liebsten mit Musik aller Art und Videospielen. Aber genug geschnackt...",
-        "fourth": "Du kannst alles an dem ich öffentlich gearbeitet habe hier sehen: ",
-        "fifth": "Oder du kannst dich hier bei mir melden: "
+        "fourth": "Du kannst dir alles an dem ich öffentlich gearbeitet habe hier ansehen: ",
+        "fifth": "Oder guck dir an was ich alles dabei gelernt habe: ",
+        "sixth": "Oder du kannst dich hier einfach bei mir melden: "
     },
     "project": {
         "Abi": {
@@ -69,66 +70,114 @@
         },
         "ReactMultilayer": {
             "title": "React Multilayer Project",
-            "description": ""
+            "description": "Ein kleines Hobby Projekt an dem ich eine Mehrlagigkeit in HTML umzusetzten. Leider bin ich hierbei an React's Grenzen gestoßen, weshalb das Projekt auf Eis liegt."
         },
         "more": "... und mehr wird folgen!",
-        "more2": "Hast du Fragen zu einem der Projekte oder ein eigenes Projekt an dem ich mitarbeiten könnte?",
-        "more3": "Folge einfach diesem Link!"
+        "more2": "Du kannst dir alles was ich bei diesen Projekten gelernt habe hier ansehen: ",
+        "more3": "Oder hast du Fragen zu einem der Projekte oder ein eigenes Projekt an dem ich mitarbeiten könnte?",
+        "more4": "Folge einfach diesem Link:"
     },
 
-
-    "mobile-hint": "Du kannst die Titel anklicken um mehr Infos anzuzeigen!",
+    "mobile-hint": "Du kannst die Titel antippen um mehr Infos anzuzeigen!",
 
 
     "skills": "Skills",
     "skill": {
-        "java": {
-            "title": "Java",
-            "subskills": {
-                "0": "Java EE",
-                "1": "Maven",
-                "2": "Spring"
+        "chat1": "Bist du interessiert womit ich bereits gearbeitet habe und was ich alles kann?",
+        "chat2": "Dann schau dir diese Liste mit allem was ich an!",
+        "chat3": "Wenn du noch andere interessante Tools und Frameworks empfehlen kannst oder mir einen Job anbieten willst, folge doch einfach diesem Link:",
+        "backend": {
+            "title": "Backend / Server Technologien",
+            "skill": {
+                "java": {
+                    "title": "Java",
+                    "skill": {
+                        "0": "Java EE",
+                        "1": "Maven",
+                        "2": "Spring"
+                    }
+                },
+                "node": {
+                    "title": "Node",
+                    "skill": {
+                        "0": "Typescript",
+                        "1": "React Server-Side Rendering",
+                        "2": "Node",
+                        "3": "Express"
+                    }
+                },
+                "scripting": {
+                    "title": "Scripting",
+                    "skill": {
+                        "0": "Windows",
+                        "1": "Bash / Unix"
+                    }
+                }
             }
         },
-        "javascript": {
-            "title": "Javascript",
-            "subskills": {
-                "0": "Babel",
-                "1": "Typescript",
-                "2": "React",
-                "3": "React Native",
-                "4": "npm & yarn",
-                "5": "Node",
-                "6": "Express"
+        "frontend": {
+            "title": "Frontend Technologien",
+            "skill": {
+                "javascript": {
+                    "title": "Javascript",
+                    "skill": {
+                        "0": "Babel",
+                        "1": "Typescript",
+                        "2": "React",
+                        "3": "React Native",
+                        "4": "npm & yarn"
+                    }
+                },
+                "html": {
+                    "title": "HTML"
+                },
+                "styles": {
+                    "title": "Web Styling",
+                    "skill": {
+                        "0": "CSS",
+                        "1": "SCSS"
+                    }
+                }
+            }
+        },
 
-            }
-        },
-        "html": {
-            "title": "HTML"
-        },
-        "styles": {
-            "title": "Web Styling",
-            "subskills": {
-                "1": "CSS",
-                "2": "SCSS"
-            }
-        },
+
         "development": {
-            "title": "Development Skills",
-            "subskills": {
-                "0": "Version Control (mainly Git)",
-                "1": "Test Driven Development"
+            "title": "Entwicklung",
+            "skill": {
+                "0": "Projektmanagement",
+                "1": "Version Control (hauptsächlich Git)",
+                "2": "Testbasierte Entwicklung",
+                "3": "IDEs (hauptsächlich Visual Studio Code)",
+                "devops": {
+                    "title": "DevOps und Administrations Skills",
+                    "skill": {
+                        "0": "Windows",
+                        "1": "Linux (hauptsächlich Ubuntu und Debian)",
+                        "2": "Proxmox Virtual Environment",
+                        "3": "Nginx Reverse Proxy",
+                        "4": "FortiGate - Firewall & Routing",
+                        "5": "Apache",
+                        "6": "Build & Deploy Automatisierung",
+                        "7": "Docker"
+                    }
+                }
             }
         },
-        "devops": {
-            "title": "DevOps",
-            "subskills": {
-                "0": "Linux (mainly Ubuntu and Debian)",
-                "1": "Proxmox Virtual Environment",
-                "2": "Nginx Reverse Proxy",
-                "3": "Apache",
-                "4": "Docker",
-                "5": "Automization"
+        "other": {
+            "title": "Zusätzliches",
+            "skill": {
+                "humor": {
+                    "title": "Humor",
+                    "skill": {
+                        "0": "Schwarzer Humor",
+                        "1": "Britischer Humor",
+                        "2": "Flachwitze",
+                        "3": "Sarkasmus"
+                    }
+                },
+                "gamesystemdev": "Spiel System Entwicklung (Hobby)",
+                "roleplaying": "Rollenspiel und Pen&Paper"
             }
         }
     }

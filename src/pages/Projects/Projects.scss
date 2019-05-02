@@ -114,8 +114,16 @@
                     color: #BBBBBB;
                     overflow: hidden;
 
+
+
                     .extra-inner {
-                        padding: 10px;
+                        padding: 5px;
+                        height: 100%;
+                    }
+
+                    .extra-mobile-background {
+                        padding: 5px;
+                        height: 100%;
                     }
 
                     .description:not(:empty) {
@@ -146,7 +154,7 @@
     }
 
     .spacer {
-        height: 100px;
+        height: 200px;
     }
 
     #mobile-hint {

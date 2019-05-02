@@ -28,6 +28,7 @@
         padding-left: 20px;
         padding-right: 20px;
         transition: background-color 0.3s ease-in-out;
+        cursor: pointer;
 
         &:hover {
             background-color: $header-hover-color;
@@ -48,7 +49,7 @@
             color: $accent-color;
         }
 
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 700px) {
             padding-left: 10px;
             padding-right: 10px;
 
@@ -86,6 +87,7 @@
                 padding-right: 15px;
                 transition: background-color 0.3s ease-in-out;
                 background-color: $header-gradient-end;
+                cursor: pointer;
 
                 &.active {
                     color: $accent-color;

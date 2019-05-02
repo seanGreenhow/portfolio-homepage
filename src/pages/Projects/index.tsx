@@ -15,14 +15,11 @@ const monthScaling = 20
 export default class Projects extends React.Component {
     render() {
         const projects: Project[] = []
-        projects.push(new Project(new Date(2010, 9), new Date(2012, 9), "Abi", "left"
-        ))
+        projects.push(new Project(new Date(2010, 9), new Date(2012, 9), "Abi", "left"))
 
-        projects.push(new Project(new Date(2012, 9), new Date(2014, 9), "TUHH", "left"
-        ))
+        projects.push(new Project(new Date(2012, 9), new Date(2014, 9), "TUHH", "left"))
 
-        projects.push(new Project(new Date(2014, 9), new Date(2016, 9), "HAW", "left"
-        ))
+        projects.push(new Project(new Date(2014, 9), new Date(2016, 9), "HAW", "left"))
 
         projects.push(new Project(new Date(2016, 11), new Date(2017, 11), "topConcepts", "left",
             ["0"],
@@ -88,7 +85,7 @@ export default class Projects extends React.Component {
                     <div id="mobile-hint" className="chat" style={{ position: 'relative' }}>
                         <div className="message" style={{ opacity: 1, height: 'auto' }}>
                             <div className="text">
-                                <Translate id="mobile-hint"/>
+                                <Translate id="mobile-hint" />
                             </div>
                         </div>
                     </div>
@@ -122,11 +119,19 @@ export default class Projects extends React.Component {
                         <div id="project-message1" className="message">
                             <div className="text" >
                                 <Translate id="project.more2" />
+                                <Link to="/skills"><Translate id="skills" /></Link>
                             </div>
                         </div>
+
                         <div id="project-message2" className="message">
                             <div className="text" >
                                 <Translate id="project.more3" />
+                            </div>
+                        </div>
+
+                        <div id="project-message3" className="message">
+                            <div className="text" >
+                                <Translate id="project.more4" />
                                 <Link to="/contact"><Translate id="contact" /></Link>
                             </div>
                         </div>
@@ -152,6 +157,10 @@ export default class Projects extends React.Component {
 
         new ScrollMagic.Scene({ duration: 0, triggerElement: '#project-message-trigger', triggerHook: "onEnter" })
             .on('enter', showMessage(controller, '#project-message2', 1.5))
+            .addTo(controller)
+
+        new ScrollMagic.Scene({ duration: 0, triggerElement: '#project-message-trigger', triggerHook: "onEnter" })
+            .on('enter', showMessage(controller, '#project-message3', 3))
             .addTo(controller)
     }
 }
