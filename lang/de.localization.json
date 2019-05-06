@@ -83,8 +83,8 @@
 
     "skills": "Skills",
     "skill": {
-        "chat1": "Bist du interessiert womit ich bereits gearbeitet habe und was ich alles kann?",
-        "chat2": "Dann schau dir diese Liste mit allem was ich an!",
+        "chat1": "Bist du interessiert womit ich bereits gearbeitet habe?",
+        "chat2": "Dann schau dir diese Liste mal an:",
         "chat3": "Wenn du noch andere interessante Tools und Frameworks empfehlen kannst oder mir einen Job anbieten willst, folge doch einfach diesem Link:",
         "backend": {
             "title": "Backend / Server Technologien",
