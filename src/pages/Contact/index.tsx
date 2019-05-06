@@ -25,9 +25,11 @@ export default class Contact extends React.Component {
                             <div className="text">
                                 <Translate id="contactText2" />
 
-                                <a href="mailto:sean@greenhow.dev">
-                                    <MdMail /> sean@greenhow.dev
-                                </a>
+                                <form action="mailto:sean@greenhow.dev" method="get">
+                                    <button type="submit">
+                                        <MdMail /> sean@greenhow.dev
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>

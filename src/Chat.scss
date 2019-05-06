@@ -44,20 +44,28 @@
         }
     }
 
-    a {
+    a,
+    button {
         font-weight: bold;
         display: block;
         padding: 10px;
-        margin: 5px;
+        margin-top: 10px;
+        margin-bottom: 10px;
         background-color: #DDDDDD;
         border-color: #EEEEEE;
         border-radius: 5px;
         border-width: 1px;
         border-style: solid;
+        width: 100%;
+        text-align: left;
 
         svg {
             vertical-align: middle;
         }
+    }
+
+    form {
+        width: 100%;
     }
 
     @media screen and (max-width: 700px) {
