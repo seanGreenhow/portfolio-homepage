@@ -74,11 +74,13 @@
             position: absolute;
             top: 100%;
             right: 0;
+            z-index: 1;
+            width: 120px;
 
             .language {
                 display: block;
-                width: auto;
                 height: 40px;
+                width: 100%;
                 text-align: center;
                 line-height: 40px;
                 color: inherit;
@@ -95,6 +97,4 @@
             }
         }
     }
-
-
 }

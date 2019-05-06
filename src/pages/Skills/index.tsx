@@ -45,12 +45,8 @@ export default class Skills extends React.Component {
             new Skill("humor", [
                 "0", "1", "2"
             ]),
-            new Skill("gamesystemdev", [
-
-            ]),
-            new Skill("roleplaying", [
-
-            ])
+            "gamesystemdev",
+            "roleplaying"
         ]))
 
         return (
