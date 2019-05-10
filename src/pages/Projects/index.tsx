@@ -15,7 +15,7 @@ const monthScaling = 20
 export default class Projects extends React.Component {
     render() {
         const projects: Project[] = []
-        projects.push(new Project(new Date(2010, 9), new Date(2012, 9), "Abi", "left"))
+        projects.push(new Project(new Date(2012, 4), new Date(2012, 9), "Abi", "left"))
 
         projects.push(new Project(new Date(2012, 9), new Date(2014, 9), "TUHH", "left"))
 
